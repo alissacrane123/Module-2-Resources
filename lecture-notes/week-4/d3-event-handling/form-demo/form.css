@@ -1,0 +1,55 @@
+body  {
+	align-items: center;
+	display:flex;
+	flex-direction: column;
+}
+form {
+	display:flex;
+	flex-direction: column;
+	padding:20px;
+	/* border: 2px solid black; */
+}
+
+h1 {
+	color:red;
+	font-family: sans-serif;
+	margin-bottom: 50px;;
+}
+
+
+h2 {
+	text-align: center;
+	
+}
+
+form > *  {
+	margin-bottom:20px;
+	width:300px;
+}
+
+input {
+	padding:10px;
+	border:1px solid black;
+	border-radius:5px;
+}
+
+input:focus {
+	outline:none;
+}
+
+#errors {
+	    color: red;
+    list-style: none;
+}
+
+#submit {
+	margin: auto;
+    outline: none;
+    background: teal;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="example.css" type="text/css" />
+    <script type="text/javascript">
+        const dragstart_handler = ev => {
+            //Add the target element's id to the data transfer object
+            ev.dataTransfer.setData('application/my-app', ev.target.id)
+            // Move the dragged data from its present location to the drop location
+            ev.dataTransfer.dropEffect = "move";
+        }
+
+        const dragover_handler = ev => {
+            // Prevent the default dragover behavior
+            ev.preventDefault();
+            // Allow the user to continue moving the draggable data
+            ev.dataTransfer.dropEffect = "move";
+        }
+        
+        const drop_handler = ev => {
+            // Prevent the default click release behavior
+            ev.preventDefault();
+            // Get the id of the target
+            const data = ev.dataTransfer.getData("application/my-app");
+            // Add the moved element to the target's DOM
+            ev.target.appendChild(document.getElementById(data))
+        }
+
+    </script>
+  </head>
+  <body>
+    <div id="red-square" draggable="true" ondragstart="dragstart_handler(event)"></div>
+    <div id="drop-zone" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">drop zone</div>
+  </body>
+</html>
+ 

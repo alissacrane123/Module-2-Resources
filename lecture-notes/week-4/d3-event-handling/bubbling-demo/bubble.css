@@ -1,0 +1,40 @@
+
+
+body {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+h1 {
+	color:red;
+	font-family: sans-serif;
+	margin-bottom: 50px;;
+}
+
+div {
+		display:flex;
+	justify-content: center;
+	align-items: center;
+	border:3px solid black;
+}
+
+#outer {
+	width: 600px;
+	height:600px;
+	background:purple;
+}
+
+
+#middle {
+	width: 400px;
+	height:400px;
+	background:teal;
+}
+
+
+#inner {
+	width:200px;
+	height:200px;
+	background: pink;
+}

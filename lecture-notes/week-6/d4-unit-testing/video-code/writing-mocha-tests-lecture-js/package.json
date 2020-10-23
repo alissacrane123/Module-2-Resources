@@ -1,0 +1,19 @@
+{
+  "name": "writing-mocha-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "employee.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+* {
+	margin: 0px;
+	padding:0px;
+	box-sizing: border-box;
+	list-style: none;
+}
+
+html, body {
+	min-height:100vh;
+	min-width: 100vw;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+body {
+	padding: 30px;
+	display:flex;
+	flex-direction: column;
+}
+
+label {
+	margin: 10px 0;
+	text-align: center;
+}
+.squares {
+	display:flex;
+	justify-content: space-evenly;
+	margin:30px 0;
+}
+
+.squares li {
+	margin: 20px;
+	display:Flex;
+	flex-direction: column;
+}
+
+.square {
+	height:200px;
+	width:200px;
+}
+
+#dog-img-container {
+	height:300px;
+	min-width: 300px;
+	border: 4px solid black;
+	margin: auto;
+	text-align: center;
+	display:flex;
+}
+
+.dog-img {
+	object-fit: cover;
+  height: 100%;
+}
+
+h2 {
+	margin:auto;
+}

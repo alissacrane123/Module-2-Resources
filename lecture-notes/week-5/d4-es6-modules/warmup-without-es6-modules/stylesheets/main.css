@@ -1,0 +1,96 @@
+html, body {
+	min-height:100vh;
+	min-width:100vw;
+}
+
+* {
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	display:flex;
+	flex-direction: column;
+}
+
+section {
+	width: 100%;
+	padding:20px;
+}
+
+ul {
+	display:flex;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	margin: 30px;
+}
+
+li {
+	height: 200px;
+	width:200px;
+	display:flex;
+	flex-direction: column;
+	background:teal;
+	border-radius:10px;
+	margin:10px;
+}
+
+label {
+	font-weight:bold;
+	text-align: center;
+	margin: auto;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+input {
+	outline:none;
+	border:none;
+	border-radius: 5px;
+	background:white;
+	padding: 10px;
+	margin-bottom:10px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: 10px auto;
+	padding: 40px;
+	width: 400px;
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	height: 150px;
+	object-fit: cover;
+}
+
+.form-container {
+	padding: 0px;
+	position: fixed;
+	bottom: 0;
+	background: #c3c3c3;
+	width:100%;
+}
+
+form button {
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	background: teal;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	margin-top: 22px;
+}
+
+form button:hover {
+	box-shadow: 0 0 10px grey;
+}

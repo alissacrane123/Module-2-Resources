@@ -1,0 +1,48 @@
+* {
+	Font-Family: Sans-Serif;
+}
+
+
+body {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	width: 400px;
+	margin: 60px auto;
+	background: teal;
+	padding: 50px;
+	border-radius: 10px;
+}
+
+h2 {
+	text-align: center;
+	margin: 0 0 50px 0;
+	color:white;
+	font-weight: bold;
+}
+
+input {
+	outline: none;
+	border: none;
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 4px;
+}
+
+button {
+	border: none;
+    outline: none;
+    padding: 15px;
+    background: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px grey;
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: bold;
+}

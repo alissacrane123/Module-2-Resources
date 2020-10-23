@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.body.addEventListener("click", (event) => {
+          console.log(event.target.id);
+        });
+        // const stopper = document.getElementById("stopper");
+        // stopper.onclick = (event) => {
+        //   event.stopPropagation();
+        // };
+      });
+    </script>
+  </head>
+  <body>
+    <div onclick="alert('The handler!')">
+      <!-- <p id="paragraph">
+        If you click on this P, the onclick event for the DIV actually runs
+      </p> -->
+    </div>
+
+    <!-- <form onclick="alert('form')">FORM
+      <div id="stopper" onclick="alert('div')">DIV
+        <p onclick="alert('p')">P</p>
+      </div>
+    </form> -->
+
+    <ul onclick="alert('A list item was clicked!')">
+        <li>This is a list item.</li>
+        <li>This is a list item.</li>
+        <li>This is a list item.</li>
+        <li>This is a list item.</li>
+        <li>This is a list item.</li>
+    </ul>
+  </body>
+</html>

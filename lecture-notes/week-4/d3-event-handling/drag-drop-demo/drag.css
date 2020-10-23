@@ -1,0 +1,194 @@
+body {
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  margin:0px;
+  padding:20px;
+}
+
+h1 {
+	color:red;
+	font-family: sans-serif;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+div {
+  width:100%;
+  margin-bottom:20px;
+}
+
+div#top {
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin-top:0px;
+}
+
+div > section {
+  width:48%;
+  border:1px solid black;
+  padding: 20px;
+}
+
+section > ul {
+  padding: 10px;
+}
+
+li.option {
+  display:flex;
+  margin-bottom:10px;
+}
+
+div#middle {
+   border:1px solid black;
+  padding: 20px;
+  width:60%;
+}
+
+form#payment {
+  display:flex;
+  flex-direction: column;
+
+}
+
+form input {
+  margin-bottom:10px;
+  padding:4px;
+}
+
+div.inputs {
+  display:flex;
+}
+
+div.inputs input:first-child {
+  margin-right:10px;
+  flex:1
+}
+
+form button {
+  padding:5px;
+  width:150px;
+  border-radius:10px;
+  background: green;
+  outline:none;
+  border:none;
+  box-shadow: 1px 1px 2px grey;
+  cursor:pointer;
+  color:white;
+  font-weight: bold;
+}
+
+button:hover {
+  box-shadow: 1px 1px 5px grey;
+}
+
+ul#errors {
+  color:red;
+}
+
+
+div#drag-demo {
+  margin-top:60px;
+  display:flex;
+  justify-content: space-between;
+}
+
+section.pizza {
+  width:50vw;
+  height:50vw;
+  border-radius:50%;
+  background:orange;
+  padding: 40px;
+}
+
+div.crust {
+  height:100%;
+  width:100%;
+  padding:60px;
+  background: yellow;
+    border-radius: 50%;
+}
+
+section.toppings {
+  height:50vw;
+  width:40vw;
+}
+
+ul.toppings > li {
+  display:flex;
+      display: flex;
+    height: 70px;
+    align-items: center;
+}
+
+.topping {
+    border-radius:50%;
+}
+#pepperoni {
+  width:50px;
+  height:50px;
+  margin:10px 10px 10px 10px;
+  background:red;
+}
+
+#jalapeno {
+  width: 50px;
+  height: 30px;
+  border: 11px solid green;
+  margin: 10px 10px 10px 10px;
+}
+
+#drop-zone {
+  height:100%;
+  width:100%;
+  display: flex;
+    justify-content: space-evenly;
+}
+
+#mushroom {
+  height:40px;
+  width:60px;
+  background:grey;
+  margin:20px 20px 20px 10px;
+}
+
+
+#break {
+  margin-bottom:100px;
+}
+
+
+
+
+
+.has-event {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.has-event#outer {
+  width: 300px;
+  height:300px;
+  background-color:blue;
+}
+
+.has-event#middle {
+  width: 200px;
+  height:200px;
+  background-color:red;
+}
+
+.has-event#inner {
+  width: 100px;
+  height:100px;
+  background-color:white;
+}

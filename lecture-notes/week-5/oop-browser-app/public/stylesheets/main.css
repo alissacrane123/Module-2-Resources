@@ -1,0 +1,74 @@
+body, html {
+	min-height:100vh;
+	min-width: 100vw;
+}
+
+body {
+	display:flex;
+	flex-direction: column;
+}
+
+.main {
+	display:flex;
+	flex-direction: column;
+	height:100%;
+	flex:1;
+}
+
+.container {
+	padding:30px;
+	display:flex;
+	flex-direction: column;
+	flex: 1;
+	background: #ececec;
+}
+
+.animal-item {
+	height:100px;
+	width:100px;
+	background:teal;
+	border-radius: 10px;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px;
+	flex-direction: column;
+}
+
+.container.hide {
+	display:none;
+}
+
+#animal-form {
+	display:flex;
+	flex-direction: column;
+}
+
+.animal-list {
+	display:flex;
+}
+
+.tabs {
+	display:flex;
+	margin-top:20px;
+}
+
+.tabs button {
+	outline:none;
+	border-radius: 10px 10px 0 0;
+	border-top: 1px solid grey;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	border-bottom:none;
+	background: #bebebe;
+	padding: 10px 20px;
+	font-weight: bold;
+}
+
+.tabs button:hover {
+	box-shadow: none;
+}
+
+.tabs button.active {
+	background: #ececec;
+}
