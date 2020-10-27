@@ -3,71 +3,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 1. getElementById returns an element
 	let header = document.getElementById('my-header');
-	// console.log('getElementById: ', header);
-
 
 
 	// 2. getElementByClassName returns an HTMLCollection
 	let colorItems = document.getElementsByClassName('color__item');
-	// console.log('getElementsByClassName: ', colorItems);
-
 
 
 
 	// 3. querySelectorAll returns a NodeList
 	// className (.className), id (#id), tagName(tagName)
 	let numberItems = document.querySelectorAll('.number__item');
-	console.log('querySelectorAll: ', numberItems);
-
+	// let colorUl = document.querySelectorAll('ul')
 
 
 
 	// 4. getElementByTagName returns an HTMLCollection
 	let lists = document.getElementsByTagName('ul');
-	console.log('getElementsByTagName: ', lists);
 
 
 
 	// 5. querySelector returns an Element
 	let firstLabel = document.querySelector('label');
-	// console.log('querySelector: ', firstLabel)
 
 
-	
+
+
+		// ITERATING THROUGH NODE LIST
+
+		numberItems.forEach(li => {
+			console.log(li);
+		});
+
 
 
 
 
 	// ITERATING THROUGH HTML COLLECTIONS
 
+		// method #1
+		for (let i = 0; i < colorItems.length; i++) {
+			console.log(colorItems[i])
+		}
 
+		// this wont work:
+		// colorItems.forEach(el => console.log(el));
 
-	// method #1
-	// for (let i = 0; i < colorItems.length; i++) {
-	// 	console.log(colorItems[i])
-	// }
-
-
-
-	// // method #2
-	// Array.from(colorItems).forEach(el => console.log(el));
-
-
-
-
-	// this wont work 
-	// colorItems.forEach(item => {
-	// 	console.log(item);
-	// })
+		// method #2
+		Array.from(colorItems).forEach(el => console.log(el))
 
 
 
 
 
 
-	// ITERATING THROUGH NODE LIST
 
-	// numberItems.forEach(item => console.log(item))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	// TODO = CAPITALIZE H1 TEXT
 
 	let h1 = document.querySelector('h1');
-	let oldText = h1.innerText;
-	h1.innerText = oldText.toUpperCase();
+	let newText = h1.innerText.toUpperCase();
+	h1.innerText = newText;
 
+	// h1.innerText = h1.innerText.toUpperCase();
 
 
 	
@@ -22,32 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	let labels = document.querySelectorAll('label');
 	labels.forEach(label => {
-		let text = label.innerText;
-		label.innerText = text.toUpperCase();
+		// let text = label.innerText; // 'Color List'
+		// label.innerText = text.toUpperCase();
+
+		label.innerText = label.innerText.toUpperCase();
 	})
-
-
-
-	// let labels = document.getElementsByTagName('label');
-	// Array.from(labels).forEach(label => {
-	// 	let text = label.innerText;
-	// 	label.innerText = text.toUpperCase();
-	// })
-
-
-	// for (let i = 0; i < labels.length; i++) {
-	// 	let label = labels[i];
-	// 	let text = label.innerText;
-	// 	label.innerText = text.toUpperCase();
-	// }
 
 
 
 
 	// TODO = CAPITALIZE LIST ITEMS FOR COLORS AND NUMBERS
 
-	let items = document.querySelectorAll('li');
-	items.forEach(item => {
+	let items = document.getElementsByTagName('li');
+	Array.from(items).forEach(item => {
 		item.innerText = item.innerText.toUpperCase();
 	})
 

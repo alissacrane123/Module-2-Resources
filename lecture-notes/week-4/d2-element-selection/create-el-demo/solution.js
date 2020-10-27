@@ -1,6 +1,5 @@
-// window.onload = () => {
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (event) => {
 
 	
 	// * TODO = ADD H1 TO HEADER
@@ -8,31 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	let header = document.getElementById('my-header');
 	
 	// method #1
-	// let h1 = document.createElement('h1');
-	// let text = document.createTextNode('Hello World');
-	// h1.appendChild(text);
-	// header.appendChild(h1);
-	
+	// header.innerHTML = '<h1>Hello World</h1>';
+
+	// this won't work
+	// header.innerText = '<h1>Hello World</h1>';
 
 
 	// method #2
-	header.innerHTML = '<h1>Hello World</h1>'
+	let h1 = document.createElement('h1');
+	h1.innerText = 'Hello World';
+	header.appendChild(h1)
 
 
-	// method #3
-	// let h1 = document.createElement('h1');
-	// h1.innerText = 'Hello World';
-	// header.appendChild(h1);
-
-
-	// not able to do this
-	// header.innerText = '<h1>Hello World</h1>'
-
-
-
-
-	// let body = document.getElementById('body');
-	// body.innerHTML = '<h1>Hello World</h1>'
 
 
 
@@ -47,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	function addItems(items, parent, className) {
 		items.forEach(item => {
 			let li = document.createElement('li');
-			li.setAttribute('class', className);
 			li.innerText = item;
+			li.setAttribute('class', className);
 			parent.appendChild(li);
 		})
 	}
@@ -59,17 +45,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	addItems(colors, colorUl, colorClass);
 
-	let numbers = ['One', 'Two', 'Three'];
-	let numberUl = document.getElementById('numbers')
-	let numberClass = 'number__item'
+	let nums = ['One', 'Two', 'Three'];
+	let numUl = document.getElementById('numbers');
+	let numClass = 'number__item';
 
-	addItems(numbers, numberUl, numberClass);
+	addItems(nums, numUl, numClass)
+
 	
 });
 
 
 
-// }
+
 
 
 
