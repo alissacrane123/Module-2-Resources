@@ -3,26 +3,26 @@ window.addEventListener("DOMContentLoaded", event => {
 
 
 // BLUR/FOCUS DEMO
+// - when an input receives focus, change backgroundColor 
+// to '#00808042'
+// - when an input loses focus, unset the backgroundColor
+
+let inputs = document.querySelectorAll('.form__field');
+// let inputs = document.getElementsByClassName('form__field');
 
 
-let inputs = document.getElementsByClassName('form__field');
-
-Array.from(inputs).forEach(input => {
-
-	// when we click in input, change background to blue
-	input.addEventListener('focus', (event) => {
-		let input = event.target;
-		input.style.backgroundColor = '#00808042';
+inputs.forEach(input => {
+	input.addEventListener('focus', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = '#00808042';
 	});
 
-	// when we click away from input, change background back to white
-	input.addEventListener('blur', (event) => {
-		let input = event.target;
-		input.style.backgroundColor = 'unset';
-	});
-
-
+	input.addEventListener('blur', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = 'unset';
+	})
 })
+
 
 
 
@@ -71,6 +71,24 @@ Array.from(inputs).forEach(input => {
 
 	// listen for submit event and run password check
 	form.addEventListener("submit", (event) => {
-		
+		event.preventDefault();
+
+		let errorsContainer = document.getElementById('errors');
+		errorsContainer.innerHTML = '';
+		errors = [];
+
+		checkPassword();
+		checkEmail();
+		checkInputs();
+
+		if (errors.length === 0) {
+			body.innerHTML = '<h1>Your form was submitted</h1>'
+		} else {
+			errors.forEach(error => {
+				let li = document.createElement('li');
+				li.innerText = error;
+				errorsContainer.appendChild(li);
+			})
+		}
 	});
 });

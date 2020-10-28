@@ -78,6 +78,7 @@ body > * {
 	width:200px;
 	border: 2px solid black;
 	margin-left: 50px;
+	
 }
 
 button {
@@ -102,6 +103,7 @@ button:hover {
 	height: 300px;
 	width: 400px;
 	margin-bottom:20px;
+	border: 2px solid black;
 }
 
 

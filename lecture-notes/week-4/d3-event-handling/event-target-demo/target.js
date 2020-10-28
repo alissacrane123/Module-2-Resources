@@ -4,21 +4,26 @@ window.addEventListener("DOMContentLoaded", event => {
 
 	// NOT SO GREAT SOLUTION
 
-	// let callback = (event) => {
-	// 	console.log(div.id);
-	// }
 
-	// let divs = document.querySelectorAll('div');
-	// divs.forEach(div => {
-	// 	div.addEventListener('click', callback)
-	// })
 
-	// divs.forEach(div => {
-	// 	div.addEventListener('click', (event) => {
-	// 		console.log(div.id);
+	// let myDivs = document.querySelectorAll('div');
+
+	// myDivs.forEach(myDiv => {
+	// 	myDiv.addEventListener('click', (event) => {
+	// 		console.log(myDiv.id);
 	// 	})
 	// })
 
+	
+	let grid = document.getElementById('grid');
+
+	grid.addEventListener('click', event => {
+		console.log('event.target', event.target);
+
+		console.log('event.target.id', event.target.id);
+
+		console.log('event.currentTarget', event.currentTarget);
+	})
 
 
 
