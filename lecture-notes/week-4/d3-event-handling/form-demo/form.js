@@ -71,26 +71,6 @@ Array.from(inputs).forEach(input => {
 
 	// listen for submit event and run password check
 	form.addEventListener("submit", (event) => {
-		event.preventDefault(); // preventing page from refreshing
-
-		let errorsContainer = document.getElementById('errors');
-		errorsContainer.innerHTML = '';
-		errors = [];
-
-		checkPassword();
-		checkEmail();
-		checkInputs();
-
-
-		if (errors.length === 0) {
-			body.innerHTML = "<h1>Your form was successfully submitted</h1>";
-			
-		} else {
-			errors.forEach(error => {
-				let el = document.createElement('li');
-				el.innerText = error;
-				errorsContainer.appendChild(el);
-			})
-		}
+		
 	});
 });
