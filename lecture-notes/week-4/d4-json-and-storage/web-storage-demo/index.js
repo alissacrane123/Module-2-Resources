@@ -49,27 +49,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 2. if values exist in local storage, pre populate relevant inputs
 	// with those values
 
-	let storedEmail = sessionStorage.getItem('email');
-	let storedFirst = sessionStorage.getItem('first');
-	let storedLast = sessionStorage.getItem('last');
-
-	let first = document.getElementById('first');
-	let last = document.getElementById('last');
-	let email = document.getElementById('email');
-
-	email.value = storedEmail;
-	first.value = storedFirst;
-	last.value = storedLast;
-
-	document.cookie = "key=value"
 	
-	let form = document.getElementById('my-form');
-
-	form.addEventListener('submit', event => {
-		event.preventDefault(); // preventing the page from refreshing
-
-		sessionStorage.setItem('first', first.value); // 'alissa'
-		sessionStorage.setItem('last', last.value); // 'crane'
-		sessionStorage.setItem('email', email.value); // 'alissa@gmail.com'
-	});
 })
