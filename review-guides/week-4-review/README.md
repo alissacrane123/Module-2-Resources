@@ -12,7 +12,6 @@ Here is a suggested outline for studying this weekend:
 
 
 3. Attempt Practice Assessment 
-   - located in the `practice-test` directory
    - very similar format to the coding portion on the real assessment
 	 - a bit more difficult than the real assessment so if you can complete this
 	   you should be in great shape
