@@ -1,3 +1,25 @@
+# CONTEXT IN JAVASCRIPT
+
+Context vs Scope
+- all invoked funcs have both scope and context
+- scope: visibiliity and availability of variables
+- context: value of `this` keyword when code is executed
+
+
+What about `this`
+- method: func that is a value withiin an object and belongs to an object
+- keyword `this` exists in every function
+- evaluates to the object that is currently invoking that func
+- thus, value of `this` reliies entirely on where a func is invoked
+
+
+```js
+
+
+```
+
+
+
 # INTRO TO NODE PACKAGE MANAGER (NPM)
 
 
