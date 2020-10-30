@@ -36,13 +36,13 @@ input {
 
 button {
 	border: none;
-    outline: none;
-    padding: 15px;
-    background: black;
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px grey;
-    margin-top: 40px;
-    font-size: 16px;
-    font-weight: bold;
+	outline: none;
+	padding: 15px;
+	background: black;
+	color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px grey;
+	margin-top: 40px;
+	font-size: 16px;
+	font-weight: bold;
 }

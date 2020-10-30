@@ -15,8 +15,121 @@ What about `this`
 
 ```js
 
+let dog = {
+	name: 'Bowser',
+	test: function() {
+		return this === dog;
+	}
+}
+
+console.log(dog.test()) // true
 
 ```
+
+Code summary
+- inside a method, `this` refers to object that is calling the method
+- i.e what comes before the `.` before the method name
+
+
+```js
+let cat = {
+  purr: function () {
+    console.log("meow");
+  },
+  purrMore: function () {
+    this.purr();
+  },
+};
+
+cat.purrMore();
+```
+
+Code summary
+- can refer to other values within an object using `this` keyword
+- calling `this.purr()` inside the `cat.purMore` method is essentially the same
+  as calling `cat.purr` because `this` inside the cat object is the cat
+
+
+Method-style invocation
+- `object.method(args)` -> `String.toUpperCase()`
+- ensures that `this` inside the method will be the objecet that method was
+  called upon
+
+
+Context Summary
+- context refers to the value of `this` withiini a function
+- `this` refers to where a function is invoked
+
+
+# ISSUES WITH SCOPE AND CONTEXT
+
+```js
+
+function testMe() {
+	console.log(this);
+}
+
+testMe() // Object [global] { global: [Circular], etc. }
+
+```
+
+`this` with function style invocation
+- each invoked func will have both a scope and context
+- even funcs that are not defined explicitely on declared objects are run
+  using the global object as their `this` and therefore, their context
+
+
+```js
+// METHODS WITH UNEXPECTED CONTEXT 
+
+let dog = {
+  name: "Bowser",
+  changeName: function () {
+    this.name = "Layla";
+  },
+};
+
+// note this is **not invoked** 
+// - we are assigning the function itself to the variable 'change'
+let change = dog.changeName;
+console.log(change()); // undefined
+
+// our dog still has the same name
+console.log(dog); // { name: 'Bowser', changeName: [Function: changeName] }
+
+// instead of changing the dog we changed the global name!!!
+console.log(this); // Object [global] {etc, etc, etc,  name: 'Layla'}
+```
+
+Code Summary
+- we saved the functiion to the var `change` without invoking it
+- when we invoke change, we're invoking it w/o the context of the `dog`
+- JS uses only object available, which is global object
+
+
+```js
+// ISSUES WITH CALLING SOMETHING IN WRONG CONTEXT
+
+let cat = {
+  purr: function () {
+    console.log("meow");
+  },
+  purrMore: function () {
+    this.purr();
+  },
+};
+
+let notACat = cat.purrMore;
+console.log(notACat()); // TypeError: this.purr is not a function
+
+```
+
+Code Summary 
+- we attempt to call the `purMore` func w/o the correct Object for context
+- `this` inside the `purrMore` func is actually the global object
+- the global object does not have a func called `purr` so we receive error
+
+
 
 
 

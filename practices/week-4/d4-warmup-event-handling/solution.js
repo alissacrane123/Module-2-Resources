@@ -10,5 +10,7 @@ document.addEventListener('DOMContentLoaded', event => {
 		li.innerText = input.value;
 		list.appendChild(li);
 		input.value = '';
-	})
+	});
+
+	
 })

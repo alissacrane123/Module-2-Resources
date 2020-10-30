@@ -7,13 +7,13 @@ let array = [1, 'hello, "world"', 3.14, { id: 17 }];
 let jsonArray = JSON.stringify(array);
 console.log(jsonArray); // '[1, "hello, \"world\"", 3.14, {"id":17}]'
 
-// jsonArray.forEach(el => console.log(el))
+// jsonArray.forEach(el => console.log(el)) // CANNOT DO
 
 // let jsonArray = '[1, "hello, \\"world\\"", 3.14, { \"id\": 17 }]';
 let deserializedArray = JSON.parse(jsonArray);
 // console.log(deserializedArray);
 
-deserializedArray.forEach(el => console.log(el))
+deserializedArray.forEach(el => console.log(el)) // CAN DO 
 
 
 
