@@ -1,4 +1,6 @@
 
+* TODO: CONTEXT IN JAVASCRIPT READING, CONTEXT LECTURE VIDEO
+
 # CONTEXT IN JAVASCRIPT
 
 
@@ -20,6 +22,18 @@ function increment() {
 increment();
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
 What about `this`
 - method: func that is a value within an object and belongs to an object
 - keyword `this` exists in every function
@@ -34,14 +48,30 @@ What about `this`
 // - value of `this` keyword when code is executed
 
 
+// context with regular functions
+// - value of `this` depends on how a function is invoked
+// - function style invocation: `this` set to global object
+// - method style invocation: `this` set to object it is called on
+
+
+
+
+// GLOBAL FUNCTIONS
+
 function whatIsThis() {
 	console.log(this);
 }
 
-// when we invoke a method function style, the context will be the global obj
+// when we invoke a method function style, the context is automatically
+// set to the global object
 
-whatIsThis(); // global
+// whatIsThis(); // global
 
+
+
+
+
+// OBJECT METHODS
 
 let obj = {
 	whatIsThis: function() {
@@ -52,16 +82,37 @@ let obj = {
 // when we invoke a method method-style, the context will be the object the
 // method was called upon 
 
-obj.whatIsThis(); // { whatIsThis: [Function: whatIsThis] }
+// obj.whatIsThis(); // { whatIsThis: [Function: whatIsThis] }
 
 
-// method-style invocation you've seen before
 
-let string = 'hello';
-let newString = string.toUpperCase();
-console.log(newString);
+
+
+
+// ISOLATED OBJECT METHODS
+
+// if we isolate this method by saving it to a variable and then invoke that
+// variable function style, we lose our context and it will default back
+// to the global object
+
+let myFunc = myObj.whatIsThis;
+// myFunc(); // global
+
+
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+# CONTEXT WITHIN OBJECTS
 
 
 Context and objects
@@ -90,6 +141,17 @@ dog.speak();
 dog.changeName('lucy')
 
 ```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -138,6 +200,17 @@ console.log(dog); // { name: 'lucy', changeName: [Function: changeName] }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 # BINDING CONTEXT USING FUNCTION.BIND METHOD
 
 
@@ -174,6 +247,60 @@ let boundSpeakFunc = cat.speak.bind(cat);
 boundSpeakFunc(); // hi my name is pancake
 
 ```
+
+
+
+
+
+
+
+Binding Methods to Multiple objects
+- can bind a single method to multiple objects, which provides a ton of
+  flexibility and keeps our code dry
+
+```js
+
+// BINDING METHODS TO MULTIPLE OBJECTS
+
+
+let animal = {
+	speak: function() {
+		console.log(`hi my name is ${this.name}`)
+	}
+}
+
+
+let bodhi = {
+	name: 'bodhi'
+}
+
+let pancake = {
+	name: 'pancake'
+}
+
+
+// we always call bind on the method we want to assign a specific context to
+// - here we want to bind the animal.speak method to two different objects
+// - the bodhiSpeak method is a version of animal.speak that will aways have
+//   a context of bodhi, thus `this` will always refer to bodhi
+//   - `this.name` will be `bodhi.name`
+// - the pancakeSpeak method is a version of animal.speak that will aways have
+//   a context of pancake, thus `this` will always refer to pancake
+//   - `this.name` will be `pancake.name`
+
+let bodhiSpeak = animal.speak.bind(bodhi);
+let pancakeSpeak = animal.speak.bind(pancake);
+
+
+bodhiSpeak(); // hi my name is bodhi
+pancakeSpeak(); // hi my name is pancake
+
+```
+
+
+
+
+
 
 
 
@@ -215,7 +342,65 @@ console.log(triple(3)); // 9
 
 
 
+
+
+
+
+* TODO: CONTEXT CODE DEMO (ask for questions)
+
+
+
+* TODO: ARROW FUNCTION READING AND VIDEO
+
+
+
+
+
+
+
+
+# ARROW FUNCTIONS REVIEW
+
+
+```js
+
+// FUNCTION STYLE SYNTAX
+
+function sayHello(name) {
+	return ` hello ${name}`
+}
+
+// FAT ARROW SYNTAX
+
+// non implicit return
+const sayHello = (name) => {
+	return ` hello ${name}`
+}
+
+// implicit return
+const sayHello = (name) => `hello ${name}`
+```
+
+
+Code Summary
+- fat arrows without curly brackets have an implicit return
+- fat arrows with curly bracks need an explicit return
+
+
+
+
+
+
+
+
+
+
+
+
 # ARROW FUNCTIONS AND CONTEXT
+
+
+
 
 
 
@@ -259,3 +444,68 @@ let changeName = user.changeNameFunc();
 // changeName('bob')
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+# NO BINDING WITH ARROW FUNCS
+
+
+
+No binding in arrow functions
+- you cannot reassign `this` in arrow funcs because they already have 
+  a bound context
+- the `this` in arrow funcs is always what it was at the time the arrow
+  func was declared
+
+
+
+```JS
+
+// NO BINDING WITH ARROW FUNCTIONS
+
+
+let bodhi = {
+	name: 'bodhi'
+}
+
+
+let noReturnName = () => {
+	console.log(this.name);
+}
+noReturnName() // undefined
+
+let notBound = noReturnName.bind(bodhi);
+notBound(); // undefined
+
+
+let returnName = function() {
+	console.log(this.name);
+}
+
+let bound = returnName.bind(bodhi);
+bound() // bodhi
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

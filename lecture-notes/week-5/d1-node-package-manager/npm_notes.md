@@ -24,7 +24,7 @@ Package Managers
 - const of at least two parts:
 	1. command line interface (CLI)
 		 - enables us to download, install/uninstall packages
-	2. registry
+	2. online registry
 		 - database of package information
 
 
@@ -41,6 +41,31 @@ Getting Started with NPM
 	- optional -g (--global) flag installs package globally (everywhere in system)
 
 
+File Structure
+- npm requirements must be at root level of application
+- files:
+	1. `package.json`
+		 - metadata: name of app, version, author
+		 - scripts: automate tasks
+		 - dependencies: packages app relies on 
+		 - safe to edit!
+	2. `package-lock.json`
+		 - contains exact details about installed dependencies (versions, etc)
+		 - represents an exact, reproducible npm environment
+		 - specifying versions ensures each user recieves exact same package
+		 - dont edit this! 
+  3. `node_modules`
+	   - contains subdir for each dependency
+		 - includes dependenciees of dependencies
+		 - contains every package you should need
+		 - dont include in version control (gitignore)
+
+
+
+devDependencies
+- packages which are used during development or which are used to build your bundle
+- ex: mocha, nodemon, etc
+- onl
 
 
 # NPM AND DEPENDENCY MANAGEMENT

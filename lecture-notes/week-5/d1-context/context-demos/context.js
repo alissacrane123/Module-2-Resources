@@ -1,4 +1,4 @@
-// SCOPE : visibiliity and availability of variables
+// SCOPE : visibility and availability of variables
 
 
 let count = 0;
@@ -23,14 +23,30 @@ function increment() {
 // - value of `this` keyword when code is executed
 
 
+// context with regular functions
+// - value of `this` depends on how a function is invoked
+// - function style invocation: `this` set to global object
+// - method style invocation: `this` set to object it is called on
+
+
+
+
+// GLOBAL FUNCTIONS
+
 function whatIsThis() {
 	console.log(this);
 }
 
-// when we invoke a method function style, the context will be the global obj
+// when we invoke a method function style, the context is automatically
+// set to the global object
 
 // whatIsThis(); // global
 
+
+
+
+
+// OBJECT METHODS
 
 let obj = {
 	whatIsThis: function() {
@@ -48,12 +64,27 @@ let obj = {
 
 
 
+// ISOLATED OBJECT METHODS
+
+// if we isolate this method by saving it to a variable and then invoke that
+// variable function style, we lose our context and it will default back
+// to the global object
+
+let myFunc = myObj.whatIsThis;
+// myFunc(); // global
 
 
 
 
-// ACCESSING PROPERTIES/METHODS USING THIS 
 
+
+
+
+
+
+
+// ACCESSING PROPERTIES/METHODS USING THIS IN OBJECT METHODS 
+// - we can access any methods/properties of an object using 'this'
 
 
 
@@ -114,9 +145,50 @@ let obj = {
 
 
 
+// BINDING METHODS TO MULTIPLE OBJECTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // BINDING WITH ARGUMENTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ARROW FUNCTION REVIEW
+
 
 
 
@@ -166,3 +238,40 @@ let noChangeName = user.noChangeNameFunc();
 
 let changeName = user.changeNameFunc();
 // changeName('bob')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NO BINDING WITH ARROW FUNCTIONS
+
+
+let bodhi = {
+	name: 'bodhi'
+}
+
+
+let noReturnName = () => {
+	console.log(this.name);
+}
+noReturnName() // undefined
+
+let notBound = noReturnName.bind(bodhi);
+notBound(); // undefined
+
+
+let returnName = function() {
+	console.log(this.name);
+}
+
+let bound = returnName.bind(bodhi);
+bound() // bodhi
