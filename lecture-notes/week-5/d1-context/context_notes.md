@@ -7,10 +7,10 @@ Context vs Scope
 
 
 What about `this`
-- method: func that is a value withiin an object and belongs to an object
+- method: func that is a value within an object and belongs to an object
 - keyword `this` exists in every function
 - evaluates to the object that is currently invoking that func
-- thus, value of `this` reliies entirely on where a func is invoked
+- thus, value of `this` relies entirely on where a func is invoked
 
 
 ```js
@@ -52,7 +52,7 @@ Code summary
 
 Method-style invocation
 - `object.method(args)` -> `String.toUpperCase()`
-- ensures that `this` inside the method will be the objecet that method was
+- ensures that `this` inside the method will be the object that method was
   called upon
 
 
@@ -176,7 +176,7 @@ let dog = {
 }
 
 let change = dog.changeName;
-console.log(change()); // typeError: cannot set prop 'name' of undefined
+console.log(change()); 
 ```
 
 
