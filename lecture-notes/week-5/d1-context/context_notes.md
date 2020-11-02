@@ -57,7 +57,7 @@ Method-style invocation
 
 
 Context Summary
-- context refers to the value of `this` withiini a function
+- context refers to the value of `this` within a function
 - `this` refers to where a function is invoked
 
 
