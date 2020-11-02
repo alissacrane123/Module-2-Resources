@@ -47,6 +47,7 @@ const narwhal = {
 		}
 };
 
+narwhal.sayAge()
 const boundSayAgeFunc = narwhal.sayAge.bind(narwhal);
 boundSayAgeFunc(); // "Hello, I am 20 years old."
 

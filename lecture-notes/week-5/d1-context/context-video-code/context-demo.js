@@ -31,7 +31,6 @@ let ponyName = pony.sayName;
 ponyName();
 
 let boundName = pony.sayName.bind(pony);
-
 boundName();
 
 
