@@ -80,12 +80,11 @@ STEP 3 - Define Relationships
 
 
 
-# CONSTRUCTOR FUNCTIONS : constructor_funcs.js
+# CONSTRUCTOR FUNCTIONS (lecture-demos/constructor_funcs.js)
 
 creating objects using literal notation
 - all we've done up until this point
 - attributes of "Cat" object representeed by obj literal's keys
-
 
 
 
@@ -95,12 +94,16 @@ creating objects using literal notation
 
 let dog = {
 	name: 'Bodhi',
-	bark: () => {
-		console.log('bark bark')
+	bark: function() {
+		console.log('bark bark bark')
+	},
+	speak: function() {
+		console.log(`hi my name is ${this.name}`)
 	}
 }
 
 dog.bark(); // bark bark 
+dog.speak(); // hi my name is Bodhi
 
 ```
 
@@ -119,9 +122,14 @@ creating objects using constructor function
 // CONSTRUCTOR FUNCTIONS
 
 
-function Dog (name) {
+function Dog(name) {
 	this.name = name;
-	console.log(this)
+	this.bark = function() {
+		console.log('bark bark bark')
+	}
+	this.sayHello = function() {
+		console.log(`hi my name is ${this.name}`)
+	}
 }
 
 let bodhi = new Dog('bodhi');
@@ -130,12 +138,13 @@ let lucy = new Dog('lucy');
 console.log(bodhi);
 console.log(lucy);
 
-console.log(bodhi.name);
-console.log(lucy.name);
-
+bodhi.bark();
+lucy.sayHello();
 
 
 ```
+
+
 
 Notice anything weird about this function?
 1. name is capitalized to help distinguish func as a constructor
@@ -146,40 +155,10 @@ Notice anything weird about this function?
 
 
 
+
 Prototypes
 - every function we define comes with a property called `prototype`
 - allows us to define shareable methods across all instances
-
-
-```js
-
-// PROTOTYPE PROPERTY
-
-
-// when Dog function is declared:
-// - default property named `prototype` is created
-// - `Dog.prototype` is an object we can define shareable methods on
-// - basically a blueprint for future Dog instances
-
-
-function Dog() {
-
-}
-
-console.log(Dog); // [Function: Dog]
-console.log(Dog.prototype); // Dog {}
-console.log(Dog.prototype.constructor === Dog) // true
-
-
-// can use Dog.prototype to define shareable properties
-// - attributes defined on prototypes will be available to all instances
-// - note: you wouldnt hardcode like this
-
-Dog.prototype.name = 'bodhi'
-console.log(Dog.prototype); // Dog { name: 'bodhi' }
-
-```
-
 
 
 In order to give instances of function access to prototype
@@ -195,37 +174,61 @@ What happens when function invoked with NEW
 
 
 
+
 ```js
 
+// PROTOTYPE PROPERTY
 
-// USING NEW KEYWORD
-
-// wouldnt make sense to define a name property on prototype
-// - can pass values to constructor function
-// - assign those values to newly created object
-
-
-// commented out code occurs under the hood
+// when Dog function is declared:
+// - default property named `prototype` is created
+// - `Dog.prototype` is an object we can define shareable methods on
+// - basically a blueprint for future Dog instances
 
 function Dog(name) {
-	// 1: const this = Object.create(Dog.prototype);
-
-	console.log(this) // Dog {}
-
 	this.name = name;
-
-	console.log(this) // Dog { name: 'bodhi' }
-
-	// 2: return this;
 }
 
-// newly created object inherits all properties from `Dog.prototype`
+console.log(Dog.prototype); // Dog {}
 
-let bodhi = new Dog('bodhi')
-console.log(bodhi) // Dog { name: 'bodhi' }
-console.log(bodhi.name) // 'bodhi'
+Dog.prototype.bark = function() {
+	console.log('bark bark bark')
+}
+
+Dog.prototype.sayHello = function() {
+	console.log(`hi my name is ${this.name}`)
+}
+// newly created object inherits all properties from Dog.prototype
+let bodhi = new Dog("bodhi", 5);
+console.log(bodhi); //Dog { name: 'bodhi' }
+
+// Dog.prototype will contain all methods defined on it
+console.log(Dog.prototype); // Dog { bark: [Function], sayHello: [Function] }
+
+
+
 
 ```
+
+
+DONT define methods within constructor func
+ - inefficient in terms of computer memory usage
+ - each instance would have its own method definition
+ - 100 instances = 100 of the same method definitions
+
+
+
+DO use Prototype
+- property of a class constructor
+- reference to object that contians common attributes/properties across all instances
+- specifies the object from which object inherits from 
+- "blueprint" for instances of class
+
+
+How Prototype work
+- if property doesn't exist on object:
+	- failed lookup delegated to Dog.prototype
+- if property is found on Dog.prototype:
+ - "this" is bound to object the prop was called on (bodhi)
 
 
 
@@ -236,82 +239,19 @@ invoking a constructor without the `new` keyword
 - in non-strict mode: `this` will be global object
 
 
+
 ```js
-function Dog (name, age) {
-	if (!(this instanceof Dog)) {
-		throw new Error ('Dog must be called with new keyword')
-	}
-	this.name = name;
-	this.age = age;
-}
+
+// INVOKING CONSTRUCTOR WITHOUT NEW KEYWORD
+
+let doggy = Dog('dog', 8);
 
 ```
 
 
 
 
-# DEFINING SHAREABLE METHODS : shareable_methods.js
-
-
-DONT define methods within constructor func
- - inefficient in terms of computer memory usage
- - each instance would have its own method definition
- - 100 instances = 100 of the same method definitions
-
-
-
-
-DO use Prototype
-- property of a class constructor
-- reference to object that contians common attributes/properties across all instances
-- specifies the object from which object inherits from 
-- "blueprint" for isntances of class
-
-
-
-```js
-
-// DEFINING SHAREABLE METHODS - THE RIGHT WAY
-
-
-function Dog(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-
-// add shared method Dog#speak to prototype
-Dog.prototype.speak = function() {
-	console.log(`hi my name is ${this.name}`);
-}
-
-// add shared method Dog#bark to prototype
-Dog.prototype.bark = function () {
-  console.log("bark bark bark");
-};
-
-// newly created object inherits all properties from Dog.prototype
-let bodhi = new Dog("bodhi", 5);
-
-console.log(Dog.prototype) // Dog { speak: [Function], bark: [Function] }
-console.log(bodhi) // Dog { name: 'bodhi', age: 5 }
-
-
-// if property doesn't exist on object:
-// 	- failed lookup delegated to Dog.prototype
-// if property is found on Dog.prototype:
-//  - "this" is bound to object the prop was called on (bodhi)
-
-
-bodhi.speak();
-bodhi.bark();
-
-```
-
-
-
-
-# VIDEO 1 - CLASS DECLARATIONS
+# VIDEO 1 - CLASS DECLARATIONS (lecture-demos/classes.js)
 
 
 Class Overview
@@ -344,7 +284,6 @@ Defining a class
 ```js
 
 // USING CLASSES
-
 class Dog {
 	constructor(name, age) {
 		this.name = name;
@@ -352,9 +291,8 @@ class Dog {
 	}
 }
 
-
-console.log(Dog)
-
+console.log(Dog);
+let frank = new Dog('frank', 5)
 
 ```
 
@@ -364,7 +302,30 @@ Hoisting
 - functions are hoisted
 - classes are not 
 
+```js
 
+// HOISTING 
+
+// functions are hoisted - below will work
+
+let penguin = new Penguin('sally');
+console.log(penguin);
+
+function Penguin(name) {
+	this.name = name;
+}
+
+// classes are not hoisted - below will not work 
+
+let penguin = new Penguin("sally");
+console.log(penguin);
+
+class Penguin {
+	constructor(name) {
+		this.name = name;
+	}
+}
+```
 
 Defining Instance Methods
 - called in instance of class
@@ -380,12 +341,8 @@ class Dog {
     this.name = name;
 		this.age = age;
 		this.tricks = [];
-  }
-
-  bark() {
-    console.log("bark bark bark");
-  }
-
+	}
+	
   speak() {
     console.log(`hi my name is ${this.name}`);
 	}
@@ -448,7 +405,7 @@ Dog.findOldest(bodhi, lucy)
 ```
 
 
-# INHERITANCE
+# VIDEO 2 - INHERITANCE (lecture-demos/inheritance.js)
 
 
 
@@ -515,6 +472,33 @@ Leaving off constructor
 - automatically runs parents constructor function
 
 
+```js
+
+// LEAVING OFF CONSTRUCTOR FUNCTION
+
+class Animal {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	speak() {
+		console.log(`hi my name is ${this.name}`);
+	}
+}
+
+
+class Dog extends Animal {
+
+	bark() {
+		console.log("bark bark bark");
+	}
+}
+
+let bodhi = new Dog('bodhi', 5);
+bodhi.speak();
+
+```
 
 
 Overwriting and adding onto inherited methods 
@@ -522,7 +506,25 @@ Overwriting and adding onto inherited methods
 - calling `super.method(args)` is essentially copying code from parent method into the specified location
 
 
+```js
+// TODO : OVERWRITE SPEAK METHOD TO ALSO PRINT "bark bark bark"
 
+class Dog extends Animal {
+  constructor(name, age) {
+		super(name, age);
+    this.tricks = [];
+  }
+
+  speak() {
+		console.log("bark bark bark");
+		super.speak() // console.log(`hi my name is ${this.name}`);
+  }
+}
+
+
+let bodhi = new Dog('bodhi', 5);
+bodhi.speak();
+```
 
 THIS
 - always references the instance object (obj created with new keyword)
@@ -532,7 +534,7 @@ THIS
 
 
 
-# VIDEO 2 - COMMMON JS MODULES
+# VIDEO 3 - COMMMON JS MODULES (./lecture-demo/module-demo)
 
 
 Overview
