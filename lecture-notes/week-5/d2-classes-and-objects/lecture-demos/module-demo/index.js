@@ -7,3 +7,4 @@ const lucy = new Dog("lucy", 10);
 const pancake = new Cat("pancake", 11);
 
 
+pancake.speak();

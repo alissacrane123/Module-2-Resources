@@ -1,12 +1,11 @@
 // IMPORT METHOD #1
 // create a variable, set it equal to module.exports from specified file
-const Animal = require("./animal");
-
+// const Animal = require("./animal");
 
 
 
 // IMPORT METHOD #2
-// const { Animal, Banana } = require('./animal');
+const { Animal, Banana } = require('./animal'); 
 // OR
 // const content = require('./animal')
 // console.log(content);

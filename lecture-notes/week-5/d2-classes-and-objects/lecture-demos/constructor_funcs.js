@@ -11,7 +11,8 @@ let dog = {
 		console.log('bark bark bark')
 	},
 	speak: function() {
-		console.log(`hi my name is ${this.name}`)
+		console.log(`hi my name is ${this.name}`);
+		this.bark();
 	}
 }
 
@@ -23,19 +24,19 @@ let dog = {
 
 
 
-
-
-
 // CONSTRUCTOR FUNCTIONS
 
 // function Dog(name) {
+// 	// let this = Object.create(Dog.prototype);
 // 	this.name = name;
 // 	this.bark = function() {
 // 		console.log('bark bark bark')
 // 	}
 // 	this.sayHello = function() {
-// 		console.log(`hi my name is ${this.name}`)
+// 		console.log(`hi my name is ${this.name}`);
+// 		this.bark();
 // 	}
+// 	// return this;
 // }
 
 // let bodhi = new Dog('bodhi');
@@ -47,6 +48,7 @@ let dog = {
 // bodhi.bark();
 // lucy.sayHello();
 
+// console.log(Dog.prototype)
 
 
 
@@ -74,25 +76,33 @@ let dog = {
 // - `Dog.prototype` is an object we can define shareable methods on
 // - basically a blueprint for future Dog instances
 
-// function Dog(name) {
-// 	this.name = name;
-// }
+function Dog(name) {
+	// let this = Object.create(Dog.prototype);
+	this.name = name;
+	// return this
+}
 
-// console.log(Dog.prototype); // Dog {}
+console.log(Dog.prototype); // Dog {}
 
-// Dog.prototype.bark = function() {
-// 	console.log('bark bark bark')
-// }
+Dog.prototype.bark = function() {
+	console.log('bark bark bark')
+}
 
-// Dog.prototype.sayHello = function() {
-// 	console.log(`hi my name is ${this.name}`)
-// }
+Dog.prototype.sayHello = function() {
+	console.log(`hi my name is ${this.name}`)
+}
 
-// // newly created object inherits all properties from Dog.prototype
-// let bodhi = new Dog("bodhi", 5);
-// console.log(bodhi); 
+// newly created object inherits all properties from Dog.prototype
+let bodhi = new Dog("bodhi");
+console.log(bodhi); 
+bodhi.bark()
+bodhi.sayHello();
 
-// // Dog.prototype will contain all methods defined on it
+
+let lucy = new Dog('lucy');
+lucy.sayHello();
+
+// Dog.prototype will contain all methods defined on it
 // console.log(Dog.prototype); 
 
 
@@ -102,7 +112,7 @@ let dog = {
 
 // INVOKING CONSTRUCTOR WITHOUT NEW KEYWORD
 
-// let doggy = Dog('dog', 8); // error
+let doggy = Dog('dog', 8); // error
 
 
 
