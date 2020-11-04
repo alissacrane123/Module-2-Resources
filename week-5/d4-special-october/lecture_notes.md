@@ -1,7 +1,7 @@
 
 # WARMUP NOTES
 
-* TODO = D3-MORE-OOP/WARMUP-CLASSES
+* TODO : `warmup-classes`
 
 Encapsulation
 - the practice of bundling related properties and behaviors into
@@ -43,7 +43,7 @@ Abstraction
 
 # LAW OF DEMETER
 
-
+* TODO : `coupling-demo`
 
 Coupling
 - the degree of interdependence betweeen two or more classes
@@ -117,7 +117,7 @@ class User {
 
 # ES6 MODULES
 
-
+* TODO : `commonJS-vs-es6-demo`
 
 Browser Support for ES6 Modules
 - ES6 modules can only be used when file is specified as a `module`
@@ -131,4 +131,4 @@ Modules in Browser Before ES6 Support
 2. individual script tags for each module
 
 
-* TODO = PRACTICE-ES6-MODULES
+* TODO : `practice-es6-modules`
