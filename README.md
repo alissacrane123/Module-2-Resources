@@ -1,4 +1,9 @@
-# Module-2-Resources
+# Module 2 Resources
+
+Welcome to Module 2! 
+<br />
+<br />
+Below you will find an outline of the material we will be covering over the next 3 weeks. The days have been broken into subdirectories, each containing additional resources for a given day (notes, practices and the content we will cover during lecture). 
 
 ## Week 4 - Working With The Browser
 
