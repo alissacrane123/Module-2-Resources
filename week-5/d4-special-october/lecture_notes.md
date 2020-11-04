@@ -1,7 +1,7 @@
 
 # WARMUP NOTES
 
-* TODO : `warmup-classes`
+* TODO : `warmup-oop`
 
 Encapsulation
 - the practice of bundling related properties and behaviors into
