@@ -1,3 +1,5 @@
+
+
 // 1. CREATE CAT CLASS
 // - props: name, age
 // - methods:
@@ -7,14 +9,11 @@
 
 
 
-
 // 2. CREATE DOG CLASS
 // - props: name, age
 // - methods:
 //   - speak():
 //     - should return a string "woof woof my name is <dog-name>"
-
-
 
 
 
@@ -36,13 +35,11 @@
 
 
 
-
 // 4. CREATE APPLICATION CLASS
 // - props: applicant (user object), animal (cat or dog object)
 // - methods:
 //   - isValid(): 
 //     - should return true if applicant is at least 18, false otherwise
-
 
 
 
@@ -69,7 +66,6 @@
 //       to adoptions array and invoke the processAdoption method, 
 //       if not valid should console.log "sorry <user-name>, you are not old 
 //       enough to adopt"
-
 
 
 

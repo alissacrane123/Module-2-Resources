@@ -302,7 +302,7 @@
         ```
       - Visualizations of our program (UI has to know about the structure of our data)
 
-  5. SOLID principles of OOP
+  5. SOLID principles of OOP (not tested on)
       - S: Single-Responsibility Principle (IMPORTANT)
         - A class/function/module should do one thing and do it well.
         - A class/function/module should have only one reason to change.

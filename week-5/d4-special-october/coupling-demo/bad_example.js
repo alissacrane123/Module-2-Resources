@@ -13,6 +13,7 @@ class User {
 		this.profile.address.update(address)
 		// let newAddress = this.profile.address;
 		// newAddress.update(address)
+
 	}
 }
 

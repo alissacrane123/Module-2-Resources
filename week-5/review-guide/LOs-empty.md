@@ -56,6 +56,6 @@
 
   4. The Law of Demeter applied to OOP
 
-  5. SOLID principles of OOP
+  5. SOLID principles of OOP (not tested on)
   
 

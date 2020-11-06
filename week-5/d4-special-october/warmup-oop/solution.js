@@ -73,7 +73,7 @@ class Shelter {
 
 	processAdoption(animal, user) {
 		this.animals = this.animals.filter(a => {
-			if (a !== animal) return a;
+			if (a !== animal) return true;
 		});
 		user.adoptPet(animal);
 	}
