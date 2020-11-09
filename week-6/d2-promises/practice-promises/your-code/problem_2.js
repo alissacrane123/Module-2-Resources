@@ -5,20 +5,20 @@ const fetch = require('node-fetch')
 // containing your very own api key! 
 
 // TODO: set the variable below to your new api key
-let apiKey = "YOUR KEY HERE";
+let apiKey = "YOUR-KEY-HERE";
 
 
 // TODO: create a function called fetchMovie that accepts a movie title as an
 // argument and uses fetch to retrieve the specified movie information
 // from the omdb api
 // - the request url for retrieving harry potter movie information is as follows:
-//   	=> `http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`
+//   => `http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`
 // - parse the string argument into the format the api is expecting so that we can 
 //   interpolate it into our request url
-// 	 	=> 'harry potter' should be 'harry+potter' in the url
+// 	 => 'harry potter' should be 'harry+potter' in the url
 // - make a fetch to the following url where `parsedMovie` is the string
 //   paramter you transformed above:
-//   	=> `http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`
+//   => `http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`
 // - chain a `.then` onto the fetch call
 // - inside that `.then`, call the .json method on the response object that the
 //   call to fetch fulfills with to turn it into a more readable json object
@@ -47,11 +47,11 @@ function fetchMovie(movie) {
 
 
 // TODO: create a function called parseMovie that accepts a json movie object 
-// as an argument
+// as an argument and console.logs the title, director and year
 // - extract the Title, Director, and Year values from that movie object
 // - console.log the following string, where "title", "director" and "year"
 //   are the properties you extracted from the movie object:
-//   	=> `${title} was directed by ${director} and released in ${year}`
+//   => `${title} was directed by ${director} and released in ${year}`
 
 
 
