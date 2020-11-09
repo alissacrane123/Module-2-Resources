@@ -7,27 +7,28 @@ Inside this directory you will find two sub-directories (`solution`, `your-code`
 
 ## Problem #1 (`your-code/problem_1.js`)
 
-1. TODO: write a function called stretch
+1. write a function called `prepareDough`
 - should return a promise
-- should console.log "done stretching" and fulfill the promise after 1 second
+- should fulfill the promise after 1 seconds with a value of 
+  "done preparing dough"
 
-
-2. TODO: write a function called runOnTreadmill
+2. write a function called `preheatOven`
 - should return a promise
-- should console.log "done running on treadmill" and fulfill the promise 
-after 0.5 seconds
+- should fulfill the promise after 0.5 seconds with a value of 
+  "done preheating oven"
 
 
-3. TODO: write a function called liftWeights
+3. write a function called `bakeCookies`
 - should return a promise
-- should console.log "done lifting weights" and fulfill the promise 
-after 2 seconds
+- should fulfill the promise after 2 seconds with a value of 
+  "done baking cookies"
 
 
-4. TODO: write a function called workout that runs the above functions in a way
-that ensures you begin runningOnTreadmill after you're finished stretching,
-you begin liftWeights after you've finished running on the treadmill
-and console.logs "done working out" after you've finished lifting weights
+4. write a function called `makeDessert` that runs the above functions in a way
+that ensures you begin preheating oven after you're finished preparing dough,
+you being baking cookies after you've finished preheating the oven,
+console.logs the value each promise fulfills with after they fulfill
+and console.logs "dessert is ready" after you've finished baking cookies
 
 
 TESTING
@@ -35,34 +36,76 @@ TESTING
 output I've provided at the bottom of the file
 
 
+```js
+makeDessert();
+// done preparing dough
+// done preheating oven
+// done baking cookies
+// dessert is ready!
+```
 
 
 
 ## Problem #2 (`your-code/problem_2.js`)
 
-lets improve upon problem #1 
+1. Go to the following url: http://www.omdbapi.com/apikey.aspx
+and sign up for an api key! You should receive a confirmation email
+containing your very own api key! 
 
-adjust your workout function so that it takes in a specific amount of time
-that you have available for the entire workout
-
-given the following rules, have each promise resolve with the amount of time
-left by decrementing each action by its specific amount of time
-
-rules:
-	1. you must stretch for 1 second
-	2. you must run on treadmill for 0.5 seconds
-	3. you must lift weights for 2 seconds
-
-if the time needed to complete the current action exceeds the amount of time
-left, reject the promise and provide a reason
-
-workout(500); // "Error: you dont have enough time to stretch"
-- if we only have 0.5 seconds to workout, we wont even have enough time to stretch
-
-TODO: recreate the functions from problem #1 to reflect this new
-functionality 
+2. set the variable `apiKey` to your new api key
 
 
-TESTING: 
-- comment in each invocation of the workout function listed at the bottom
-and run the file (`node problem_2.js`) to see if you get the expected output
+3. create a function called `fetchMovie` that accepts a movie title as an
+argument and uses fetch to retrieve the specified movie information
+from the omdb api
+- the request url for retrieving harry potter movie information is as follows:
+  => `http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`
+- parse the string argument into the format the api is expecting so that we can 
+  interpolate it into our request url
+	 => 'harry potter' should be 'harry+potter' in the url
+- make a fetch to the following url where `parsedMovie` is the string
+  parameter you transformed above:
+  => `http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`
+- chain a `.then` onto the fetch call
+- inside that `.then`, call the .json method on the response object that the
+  call to fetch fulfills with to turn it into a more readable json object
+- the json object returned from the previous `.then` will look something like:
+
+				 { Title: 'Harry Potter and the Deathly Hallows: Part 2',
+				   Year: '2011',
+				   Rated: 'PG-13',
+				   Released: '15 Jul 2011',
+				   Runtime: '130 min',
+				   Genre: 'Adventure, Drama, Fantasy, Mystery',
+				   Director: 'David Yates',
+				   Response: 'True' }
+
+- chain another `.then` and pass the json object returned from the previous
+  `.then` to the `parseMovie` function we will write below
+
+
+
+4. create a function called `parseMovie` that accepts a json movie object 
+as an argument and console.logs the title, director and year
+- extract the Title, Director, and Year values from that movie object
+- console.log the following string, where "title", "director" and "year"
+  are the properties you extracted from the movie object:
+  => `${title} was directed by ${director} and released in ${year}`
+
+
+TESTING
+- run the file (`node problem_2.js`) and check your output against the expected
+output I've provided at the bottom of the file
+
+
+```js
+fetchMovie('harry potter');
+// Zoolander was directed by Ben Stiller and released in 2001
+
+fetchMovie('zoolander')
+// Mean Girls was directed by Mark Waters and released in 2004
+
+fetchMovie('mean girls')
+// Harry Potter and the Deathly Hallows: Part 2 was directed by David Yates and released in 2011
+```
+

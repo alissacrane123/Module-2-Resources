@@ -1,14 +1,15 @@
 const fetch = require('node-fetch')
 
-// TODO: Go to the following url: http://www.omdbapi.com/apikey.aspx
+// 1. Go to the following url: http://www.omdbapi.com/apikey.aspx
 // and sign up for an api key! You should receive a confirmation email
 // containing your very own api key! 
 
-// TODO: set the variable below to your new api key
+
+// 2. set the variable `apiKey` to your new api key
 let apiKey = "YOUR-KEY-HERE";
 
 
-// TODO: create a function called fetchMovie that accepts a movie title as an
+// 3. create a function called `fetchMovie` that accepts a movie title as an
 // argument and uses fetch to retrieve the specified movie information
 // from the omdb api
 // - the request url for retrieving harry potter movie information is as follows:
@@ -38,15 +39,11 @@ let apiKey = "YOUR-KEY-HERE";
 
 
 function fetchMovie(movie) {
-	let parsedMovie = movie.split(' ').join('+');
-	fetch(`http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`)
-		.then(res => res.json())
-		.then(json => parseMovie(json))
-		.catch(err => console.log('ERROR: ', err))
+	
 }
 
 
-// TODO: create a function called parseMovie that accepts a json movie object 
+// 4. create a function called `parseMovie` that accepts a json movie object 
 // as an argument and console.logs the title, director and year
 // - extract the Title, Director, and Year values from that movie object
 // - console.log the following string, where "title", "director" and "year"
@@ -54,17 +51,12 @@ function fetchMovie(movie) {
 //   => `${title} was directed by ${director} and released in ${year}`
 
 
-
 function parseMovie(movie) {
-	let title = movie.Title;
-	let director = movie.Director;
-	let year = movie.Year;
 
-	console.log(`${title} was directed by ${director} and released in ${year}`)
 }
 
 
-// TODO:
+// TESTING:
 // - run your file (`node problem_2.js`) and ensure the output matches
 //   the output below
 

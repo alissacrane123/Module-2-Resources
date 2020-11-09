@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 
-let apiKey = "YOUR-API-KEY";
+let apiKey = "afab3d6d&t";
 
 
 function fetchMovie(movie) {
