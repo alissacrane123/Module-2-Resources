@@ -1,0 +1,15 @@
+{
+  "name": "practice-promises",
+  "version": "1.0.0",
+  "description": "Inside this directory you will find two sub-directories (`solution`, `your-code`) - write your solutions to the problems listed below in the `your-code` directory - check your solutions against those I've provided in the `solution` directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}

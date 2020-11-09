@@ -1,52 +1,51 @@
-// TODO: write a function called stretch
+// TODO: write a function called prepareDough
 // - should return a promise
-// - should console.log "done stretching" and fulfill the promise after 1 second
+// - should fulfill the promise after 1 seconds with a value of 
+//   "done preparing dough"
 
 
-function stretch() {
+function prepareDough() {
 
 }
 
 
-// TODO: write a function called runOnTreadmill
+
+// TODO: write a function called preheatOven
 // - should return a promise
-// - should console.log "done running on treadmill" and fulfill the promise 
-// after 0.5 seconds
+// - should fulfill the promise after 0.5 seconds with a value of 
+//   "done preheating oven"
 
-
-function runOnTreadmill() {
+function preheatOven() {
 
 }
 
-// TODO: write a function called liftWeights
+
+
+// TODO: write a function called bakeCookies
 // - should return a promise
-// - should console.log "done lifting weights" and fulfill the promise 
-// after 2 seconds
+// - should fulfill the promise after 2 seconds with a value of 
+//   "done baking cookies"
 
-
-function liftWeights() {
-
-}
-
-
-// TODO: write a function called workout that runs the above functions in a way
-// that ensures you begin runningOnTreadmill after you're finished stretching,
-// you begin liftWeights after you've finished running on the treadmill
-// and console.logs "done working out" after you've finished lifting weights
-
-
-function workout() {
+function bakeCookies() {
 
 }
 
 
 
-// TESTING: 
-// - run the file (node problem_1.js) to see if you get the expected output
+// TODO: write a function called makeDessert that runs the above functions in a way
+// that ensures you begin preheating oven after you're finished preparing dough,
+// you being baking cookies after you've finished preheating the oven,
+// console.logs the value each promise fulfills with, after they fulfill
+// and console.logs "dessert is ready" after you've finished baking cookies
+
+function makeDessert() {
+ 
+}
 
 
-workout();
-// done stretching
-// done running on treadmill
-// done lifting weights
-// done working out
+
+makeDessert();
+// done preparing dough
+// done preheating oven
+// done baking cookies
+// dessert is ready!

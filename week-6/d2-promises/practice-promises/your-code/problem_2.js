@@ -1,53 +1,79 @@
-// lets improve upon problem #1
+const fetch = require('node-fetch')
 
-// adjust your workout function so that it takes in a specific amount of time
-// that you have available for the entire workout
+// TODO: Go to the following url: http://www.omdbapi.com/apikey.aspx
+// and sign up for an api key! You should receive a confirmation email
+// containing your very own api key! 
 
-// given the following rules, have each promise resolve with the amount of time
-// left by decrementing each action by its specific amount of time
+// TODO: set the variable below to your new api key
+let apiKey = "YOUR KEY HERE";
 
-// rules:
-// 	1. you must stretch for 1 second
-// 	2. you must run on treadmill for 0.5 seconds
-// 	3. you must lift weights for 2 seconds
 
-// if the time neeeded to complete the current action exceeds the amount of time
-// left, reject the promise and provide a reason
+// TODO: 
+// - create a function called fetchMovie that takes in a movie title string
+//   as an argument
+// - the request url for retrieving harry potter movie information is as follows:
+//   	=> `http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`
+// - parse the string argument into the format the api is expecting so that we can 
+//   interpolate it into our request url
+// 	 	=> 'harry potter' should be 'harry+potter' in the url
+// - make a fetch to the following url where `parsedMovie` is the string
+//   paramter you transformed above:
+//   	=> `http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`
+// - chain a `.then` onto the fetch call
+// - inside that `.then`, call the .json method on the response object that the
+//   call to fetch fulfills with to turn it into a more readable json object
+// - the json object returned from the previous `.then` will look something like:
 
-// workout(500) // "Error: you dont have enough time to stretch"
-// - if we only have 0.5 seconds to workout, we wont even have enough time to stretch
+//				 { Title: 'Harry Potter and the Deathly Hallows: Part 2',
+//				   Year: '2011',
+//				   Rated: 'PG-13',
+//				   Released: '15 Jul 2011',
+//				   Runtime: '130 min',
+//				   Genre: 'Adventure, Drama, Fantasy, Mystery',
+//				   Director: 'David Yates',
+//				   Response: 'True' }
 
-function stretch(timeLeft) {
+// - chain another `.then` and pass the json object returned from the previous
+//   `.then` to the parseMovie function we will write below
 
+
+function fetchMovie(movie) {
+	let parsedMovie = movie.split(' ').join('+');
+	fetch(`http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`)
+		.then(res => res.json())
+		.then(json => parseMovie(json))
+		.catch(err => console.log('ERROR: ', err))
 }
 
-function runOnTreadmill(timeLeft) {
 
+// TODO:
+// - create a function called parseMovie which accepts a json movie object as an argument
+// - extract the Title, Director, and Year values from that movie object
+// - console.log the following string, where "title", "director" and "year"
+//   are the properties you extracted from the movie object:
+//   	=> `${title} was directed by ${director} and released in ${year}`
+
+
+
+function parseMovie(movie) {
+	let title = movie.Title;
+	let director = movie.Director;
+	let year = movie.Year;
+
+	console.log(`${title} was directed by ${director} and released in ${year}`)
 }
 
-function liftWeights(timeLeft) {
 
-}
+// TODO:
+// - run your file (`node problem_2.js`) and ensure the output matches
+//   the output below
 
-function workout(totalTime) {
-	
-}
 
-// TESTING:
-// - comment in each invocation of your workout function below and run
-// the file (node problem_2.js) to see if you get the expected output
+fetchMovie('harry potter');
+// Zoolander was directed by Ben Stiller and released in 2001
 
-// workout(1000);
-// 		done stretching
-// 		Error:  you dont have enough time to run on treadmill
+fetchMovie('zoolander')
+// Mean Girls was directed by Mark Waters and released in 2004
 
-// workout(2000);
-// 		done stretching
-// 		done running on treadmill
-// 		Error:  you dont have enough time to lift weights
-
-// workout(4000);
-// 		done stretching
-// 		done running on treadmill
-// 		done lifting weights
-// 		done workout out
+fetchMovie('mean girls')
+// Harry Potter and the Deathly Hallows: Part 2 was directed by David Yates and released in 2011

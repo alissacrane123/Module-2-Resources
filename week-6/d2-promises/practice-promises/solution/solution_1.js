@@ -1,60 +1,61 @@
-// TODO: write a function called stretch
+// TODO: write a function called prepareDough
 // - should return a promise
-// - should console.log "done stretching" and fulfill the promise after 1 second
+// - should fulfill the promise after 1 seconds with a value of 
+//   "done preparing dough"
 
 
-function stretch() {
+function prepareDough() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("done stretching");
-      resolve();
+      resolve("done preparing dough");
     }, 1000);
   });
 }
 
-// TODO: write a function called runOnTreadmill
+// TODO: write a function called preheatOven
 // - should return a promise
-// - should console.log "done running on treadmill" and fulfill the promise 
-// after 0.5 seconds
+// - should fulfill the promise after 0.5 seconds with a value of 
+//   "done preheating oven"
 
-function runOnTreadmill() {
+function preheatOven() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("done running on treadmill");
-      resolve();
+      resolve("done preheating oven");
     }, 500);
   });
 }
 
-// TODO: write a function called liftWeights
+// TODO: write a function called bakeCookies
 // - should return a promise
-// - should console.log "done lifting weights" and fulfill the promise 
-// after 2 seconds
+// - should fulfill the promise after 2 seconds with a value of 
+//   "done baking cookies"
 
-function liftWeights() {
+function bakeCookies() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      console.log("done lifting weights");
-      resolve();
+      resolve("done baking cookies");
     }, 2000);
   });
 }
 
-// TODO: write a function called workout that runs the above functions in a way
+// TODO: write a function called makeDessert that runs the above functions in a way
 // that ensures you begin runningOnTreadmill after you're finished stretching,
 // you being liftWeights after you've finished running on the treadmill
 // and console.logs "done working out" after you've finished lifting weights
 
-function workout() {
-  stretch()
-    .then(runOnTreadmill)
-    .then(liftWeights)
-    .then(() => console.log("done working out"))
+function makeDessert() {
+  prepareDough()
+    .then(res => console.log(res))
+    .then(preheatOven)
+		.then(res => console.log(res))
+		.then(bakeCookies)
+		.then(res => console.log(res))
+		.then(() => console.log('dessert is ready!'))
     .catch((err) => console.log(err));
 }
 
-workout();
-// done stretching
-// done running on treadmill
-// done lifting weights
-// done working out
+makeDessert();
+// done preparing dough
+// done preheating oven
+// done baking cookies
+// dessert is ready!

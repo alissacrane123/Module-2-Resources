@@ -76,22 +76,22 @@
 
 
 
-// function sendEmail(recipient, interval) {
+// function updateEmail(username, newEmail, interval) {
 // 	return new Promise((resolve, reject) => {
-// 		console.log(`begin sending email to ${recipient}`);
+// 		console.log(`begin updating ${username}'s email`);
 
 // 		setTimeout(() => {
-// 			resolve(`email succsesfully sent to ${recipient}`);
-// 			// reject(`email to ${recipient} failed to send`)
+// 			reject(`failed to update ${username}'s email`)
+// 			resolve(`${username}'s email succsesfully changed to ${newEmail}`);
 // 		}, interval)
 // 	})
 // }
 
 
-// let jamesPromise = sendEmail('james', 1000);
-// let bradPromise = sendEmail('brad', 2000);
-// let senyoPromise = sendEmail('senyo', 500);
-// let kristenPromise = sendEmail('kristen', 1500);
+// let jamesPromise = updateEmail('javier','javier@email.com', 1000);
+// let bradPromise = updateEmail('brad','brad@email.com', 2000);
+// let senyoPromise = updateEmail('senyo','senyo@email.com', 500);
+// let kristenPromise = updateEmail('kristen','kristen@email.com', 1500);
 
 
 
@@ -101,11 +101,12 @@
 // Promise.all(promises)
 //   .then((results) => {
 //     console.log('resolved values: \n', results);
-//     console.log("emails have been successfully sent!");
+//     console.log("emails have been successfully updated!");
 //   })
 //   .catch((reason) => {
 //     console.log('error: ', reason);
-// 	});
+// 	})
+
 	
 
 
