@@ -48,9 +48,11 @@ makeDessert();
 
 ## Problem #2 (`your-code/problem_2.js`)
 
+* Don't forget to `npm install`! 
+
 1. Go to the following url: http://www.omdbapi.com/apikey.aspx
 and sign up for an api key! You should receive a confirmation email
-containing your very own api key! 
+containing your very own api key.
 
 2. set the variable `apiKey` to your new api key
 
