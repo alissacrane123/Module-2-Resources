@@ -8,7 +8,7 @@ Overview
 
 Hypertext (HT)
 - "content with references to other content"
-- text, imaages, video, any digital content
+- text, images, video, any digital content
 - what makes the web the "web"
 - html : hypertext markup language
 - hyperlinks (links) : erferences betweeen hypertext resources
@@ -25,7 +25,7 @@ HTTP
 - defines process of exchanging hypertext between systems
 - works betweeen clients aand servers
 	- client: data consumer, usually web browser
-	- server: dataa provider, often where aapp is running
+	- server: data provider, often where aapp is running
 - typical HTTP exchange: request/response cycle
 	- client sends request to server for particular resource(webpage, img, data)
 	- server sends back a response containing reseource or explanation of why it failed
@@ -37,7 +37,7 @@ Properties of HTTP
 	 - can rest assured each message will be confirmed
 2. stateless transfer
 	 - HTTP is stateless protocall, doesnt store any info
-	 - each req you send acaross HTTP connection should contaian all its own context
+	 - each req you send acaross HTTP connection should contain all its own context
 	 - only need to read single HTTP req to understaand its inteent
 	 - HTTP supports cookies to keep track of stateful data
 3. intermediaries
@@ -45,7 +45,7 @@ Properties of HTTP
 	 - proxies: may modify req so it appears to come from different source
 	 - gateways: preetend to be the resource server you requested
 	 - tunnels: simply pass req along
-	 - when response is sent back, "their router" acts aas proxy, "your router" acts as a gateway
+	 - when response is sent back, "their router" acts as proxy, "your router" acts as a gateway
 	 * single server may act as any of the intermediary types, depending on need of HTTP message its transmitting
 
 
@@ -56,7 +56,7 @@ Properties of HTTP
 
 Overview
 - the web is made up of computers asking each other for things
-- you teell your browser which website you want to access
+- you tell your browser which website you want to access
 - your browser hands that reequeset off to a server that can get what you asked for
 
 
