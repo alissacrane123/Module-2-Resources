@@ -13,11 +13,12 @@ const fetch = require("node-fetch");
 
 
 
-// fetch("https://api.github.com/users/github")
-//   .then(res => console.log(res))
-//   .catch(reason => {
-//     console.log("rejected because", reason);
-//   });
+fetch("https://api.github.com/users/", { })
+	.then(res => res.json())
+	.then(json => console.log(json.login))
+  .catch(reason => {
+    console.log("rejected because", reason);
+  });
 
 
 
@@ -55,18 +56,18 @@ const fetch = require("node-fetch");
 
 // API KEYS
 
-// let apiKey = "afab3d6d&t";
+let apiKey = "afab3d6d&t";
 
-// fetch(`http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`)
-//   .then((res) => res.json()) 
-//   .then((jsonRes) => {
-//     // printing the json jsonResponse object
-//     console.log(jsonRes);
-//     // returning json obj so that it is passed to the next .then()
-//     return jsonRes;
-//   })
-//   .then((jsonRes) => {
-//     // keying into json res obj at key "Title" + printing
-//     console.log("title: ", jsonRes.Title);
-//   })
-//   .catch((err) => console.log(err));
+fetch(`http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`)
+  .then((res) => res.json()) 
+  .then((jsonRes) => {
+    // printing the json jsonResponse object
+    console.log(jsonRes);
+    // returning json obj so that it is passed to the next .then()
+    return jsonRes;
+  })
+  .then((jsonRes) => {
+    // keying into json res obj at key "Title" + printing
+    console.log("title: ", jsonRes.Title);
+  })
+  .catch((err) => console.log(err));

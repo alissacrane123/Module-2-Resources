@@ -5,41 +5,41 @@
 
 // #1 - PROBLEM
 
-function grindTheBeans() {
-  setTimeout(() => {
-    console.log('done grinding the coffee beans');
-  }, 1000)
-}
+// function grindTheBeans() {
+//   setTimeout(() => {
+//     console.log('done grinding the coffee beans');
+//   }, 1000)
+// }
 
-function heatTheWater() {
-  setTimeout(() => {
-    console.log('done heating the water');
-  }, 500)
-}
+// function heatTheWater() {
+//   setTimeout(() => {
+//     console.log('done heating the water');
+//   }, 500)
+// }
 
-function addBeansToWater() {
-  setTimeout(() => {
-    console.log('done adding beans to water');
-  }, 1000)
-}
+// function addBeansToWater() {
+//   setTimeout(() => {
+//     console.log('done adding beans to water');
+//   }, 1000)
+// }
 
-function heatTheBeans() {
-  setTimeout(() => {
-    console.log('done heating the beans');
-  }, 800)
-}
-
-
-
-function makeCoffee() {
-	grindTheBeans();
-	heatTheWater();
-	addBeansToWater();
-	heatTheBeans();
-}
+// function heatTheBeans() {
+//   setTimeout(() => {
+//     console.log('done heating the beans');
+//   }, 800)
+// }
 
 
-makeCoffee();
+
+// function makeCoffee() {
+// 	grindTheBeans();
+// 	heatTheWater();
+// 	addBeansToWater();
+// 	heatTheBeans();
+// }
+
+
+// makeCoffee();
 
 
 
@@ -54,49 +54,49 @@ makeCoffee();
 
 // #2 - CALLBACK SOLUTION
 
-// function grindTheBeans(nextTask) {
-//   setTimeout(() => {
-//     console.log('done grinding the coffee beans');
-//     nextTask();
-//   }, 1000)
-// }
+function grindTheBeans(nextTask) {
+  setTimeout(() => {
+    console.log('done grinding the coffee beans');
+    nextTask();
+  }, 1000)
+}
 
-// function heatTheWater(nextTask) {
-//   setTimeout(() => {
-//     console.log('done heating the water');
-//     nextTask();
-//   }, 500)
-// }
+function heatTheWater(nextTask) {
+  setTimeout(() => {
+    console.log('done heating the water');
+    nextTask();
+  }, 500)
+}
 
-// function addBeansToWater(nextTask) {
-//   setTimeout(() => {
-//     console.log('done adding beans to water');
-//     nextTask();
-//   }, 1000)
-// }
+function addBeansToWater(nextTask) {
+  setTimeout(() => {
+    console.log('done adding beans to water');
+    nextTask();
+  }, 1000)
+}
 
-// function heatTheBeans(nextTask) {
-//   setTimeout(() => {
-//     console.log('done heating the beans');
-//     nextTask();
-//   }, 800)
-// }
+function heatTheBeans(nextTask) {
+  setTimeout(() => {
+    console.log('done heating the beans');
+    nextTask();
+  }, 800)
+}
 
 
 
 // #3 - THE CALLBACK ISSUE
 
-// function makeCoffee() {
-// 	grindTheBeans(() => {
-// 		heatTheWater(() => {
-// 			addBeansToWater(() => {
-// 				heatTheBeans(() => {
-// 					console.log('coffee is ready!');
-// 				});
-// 			});
-// 		});
-// 	});
-// }
+function makeCoffee() {
+	grindTheBeans(() => {
+		heatTheWater(() => {
+			addBeansToWater(() => {
+				heatTheBeans(() => {
+					console.log('coffee is ready!');
+				});
+			});
+		});
+	});
+}
 
 // makeCoffee();
 
@@ -146,7 +146,7 @@ makeCoffee();
 
 // #6 - EXAMPLE: setTimeout used to simulate async code
 
-// let myPromise = new Promise((resolve, reject) => {
+// let myPromise = new Promise((resolve, banana) => {
 
 // 	console.log('async code begins executing');
 
@@ -155,14 +155,14 @@ makeCoffee();
 // 		console.log('async code completes');
 
 // 		// resolve('the promise has been fulfilled');
-// 		reject('the promise is rejected')
+// 		banana('the promise is rejected')
 		
 // 		console.log(myPromise);
 //   }, 1000)
 // });
 
 
-// console.log(myPromise)
+// console.log(myPromise); // Pending
 
 
 
@@ -178,9 +178,11 @@ makeCoffee();
 
 // let myPromise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
+// 		// if (// something bad happened) {
 
+// 		// 	reject('the promise is rejected')
+// 		// }
 //     resolve('banana');
-//     // reject('the promise is rejected')
 //   }, 1000)
 // });
 
@@ -218,8 +220,9 @@ makeCoffee();
 
 // let myPromise = new Promise((resolve, reject) => {
 //   setTimeout(() => {
-
-//     reject('the promise is rejected')
+// 		reject('the promise is rejected');
+// 		resolve('banana');
+// 		console.log(myPromise)
 //   }, 1000)
 // });
 
@@ -227,8 +230,13 @@ makeCoffee();
 //   console.log('resolved: ', result);
 // };
 
+// let onRejected = reason => {
+// 	console.log('rejected', reason)
+// }
+
 // myPromise
-//   .then(onFulfilled)
+// 	.then(onFulfilled, onRejected)
+	
 
 
 
@@ -258,8 +266,12 @@ makeCoffee();
 //     return 42
 //   })
 //   .then((result) => {
-//     console.log('resolved 2:', result)
-//   })
+// 		console.log('resolved 2:', result);
+// 		return 'banana'
+// 	})
+// 	.then((res) => {
+// 		console.log('resolved 3: ', res);
+// 	})
 
 
 
@@ -284,11 +296,11 @@ makeCoffee();
 // let onRejected = (reason) => { throw Error('something happened') };
 
 
-// myPromise
-//   .then(onFulfilled, onRejected)
+// // myPromise
+// //   .then(onFulfilled, onRejected)
 
 
-// COULD KEEP CHAINING .THENS BUT WHEN DOES IT END?
+// // COULD KEEP CHAINING .THENS BUT WHEN DOES IT END?
 // myPromise
 //   .then(onFulfilled, onRejected)
 //   .then((res) => console.log(res), (err) => console.log(err))
@@ -325,13 +337,17 @@ makeCoffee();
 // let onRejected = (reason) => { throw Error('something happened') };
 
 
-// myPromise
-//   .then(onFulfilled, onRejected)
+// // myPromise
+// //   .then(onFulfilled, onRejected)
 
 
 // myPromise
-//   .then(onFulfilled, onRejected)
-//   .catch(err => console.log('CATCH: ', err));
+//   .then(onFulfilled)
+//   .catch(err => {
+// 		console.log('CATCH: ', err);
+// 		return 50;
+// 	})
+// 	.then(res => console.log(res))
 
 
 
@@ -385,26 +401,26 @@ makeCoffee();
 
 // #13 - PROMISES IN THEIR FINAL STATE
 
-// let myPromise = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-// 		// resolve('the promise was resolved')
-//     reject(Error('the promise was rejected'));
-//   }, 1000);
-// });
+let myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+		resolve('the promise was resolved')
+    // reject(Error('the promise was rejected'));
+  }, 1000);
+});
 
 
-// console.log(myPromise)
+console.log(myPromise)
 
-// let onFulfilled = (result) => { 
-// 	console.log(myPromise);
-// };
+let onFulfilled = (result) => { 
+	console.log(myPromise);
+};
 
-// let onRejected = (reason) => { 
-// 	console.log(myPromise);
-// };
+let onRejected = (reason) => { 
+	console.log(myPromise);
+};
 
 
-// myPromise
-//   .then(onFulfilled, onRejected)
+myPromise
+  .then(onFulfilled, onRejected)
 
 
