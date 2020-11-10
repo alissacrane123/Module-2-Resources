@@ -61,13 +61,13 @@ containing your very own api key.
 argument and uses fetch to retrieve the specified movie information
 from the omdb api
 - the request url for retrieving harry potter movie information is as follows:
-  => `http://www.omdbapi.com/?apikey=${apiKey}=harry+potter`
+  => `http://www.omdbapi.com/?apikey=${apiKey}&t=harry+potter`
 - parse the string argument into the format the api is expecting so that we can 
   interpolate it into our request url
 	 => 'harry potter' should be 'harry+potter' in the url
 - make a fetch to the following url where `parsedMovie` is the string
   parameter you transformed above:
-  => `http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`
+  => `http://www.omdbapi.com/?apikey=${apiKey}&t=${parsedMovie}`
 - chain a `.then` onto the fetch call
 - inside that `.then`, call the .json method on the response object that the
   call to fetch fulfills with to turn it into a more readable json object

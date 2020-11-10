@@ -38,10 +38,12 @@ function bakeCookies() {
   });
 }
 
-// TODO: write a function called makeDessert that runs the above functions in a way
-// that ensures you begin runningOnTreadmill after you're finished stretching,
-// you being liftWeights after you've finished running on the treadmill
-// and console.logs "done working out" after you've finished lifting weights
+// 4. write a function called `makeDessert` that runs the above functions in a way
+// that ensures you begin preheating oven after you're finished preparing dough,
+// you being baking cookies after you've finished preheating the oven,
+// console.logs the value each promise fulfills with, after they fulfill
+// and console.logs "dessert is ready" after you've finished baking cookies
+
 
 function makeDessert() {
   prepareDough()

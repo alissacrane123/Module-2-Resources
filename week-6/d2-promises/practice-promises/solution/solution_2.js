@@ -1,11 +1,11 @@
 const fetch = require('node-fetch')
 
-let apiKey = "afab3d6d&t";
+let apiKey = "afab3d6d";
 
 
 function fetchMovie(movie) {
 	let parsedMovie = movie.split(' ').join('+');
-	fetch(`http://www.omdbapi.com/?apikey=${apiKey}=${parsedMovie}`)
+	fetch(`http://www.omdbapi.com/?apikey=${apiKey}=&t${parsedMovie}`)
 		.then(res => res.json())
 		.then(json => parseMovie(json))
 		.catch(err => console.log('ERROR: ', err))
@@ -21,11 +21,31 @@ function parseMovie(movie) {
 }
 
 
-fetchMovie('harry potter');
+// fetchMovie('harry potter');
 // Zoolander was directed by Ben Stiller and released in 2001
 
-fetchMovie('zoolander')
+// fetchMovie('zoolander')
 // Mean Girls was directed by Mark Waters and released in 2004
 
-fetchMovie('mean girls')
+// fetchMovie('mean girls')
 // Harry Potter and the Deathly Hallows: Part 2 was directed by David Yates and released in 2011
+
+
+
+
+function fetchMovie(movie) {
+	let parsedMovie = movie.split(' ').join('+');
+	fetch(`http://www.omdbapi.com/?apikey=${apiKey}&t=${parsedMovie}`)
+		.then(res => res.json())
+		.then(json => {
+			console.log(json);
+			if (json.Error) {
+				throw Error(json.Error)
+			} else {
+				parseMovie(json)
+			}
+		})
+		.catch(err => console.log('ERROR: ', err))
+}
+
+fetchMovie('harry potterr');
