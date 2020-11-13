@@ -4,13 +4,15 @@
 
 
 
+
 # VIDEO - ASYNC/AWAIT
+
 
 
 overview
 - enable async, promise-based behavior to be written in cleaner style
 - avoids the need to explicitely configure promise chains
-
+- dont need to worry about scoping issues
 
 Function Declaration with `async`
 - creates a function that returns an implicit promise containing the result
@@ -126,6 +128,45 @@ fetchHarryPotter();
 
 # ASYNC-AWAIT-PRACTICE
 
+
+# STAR WARS REFACTOR
+
+```JS
+async function getPerson(id) {
+	let res = await fetch(`${baseUrl}${id}`);
+	let person = await res.json();
+	
+	let films = person.films;
+	let homeworldUrl = person.homeworld;
+
+	let homeworldRes = await fetch(homeworldUrl);
+	let homeworldObj = await homeworldRes.json();
+
+	let promises = films.map(film => fetch(film));
+	let resArray = await Promise.all(promises);
+
+	promises = resArray.map(res => res.json())
+	let filmsArray = await Promise.all(promises);
+
+
+	let filmTitles = filmsArray.map(film => film.title);
+	let personName = person.name;
+	let homeworld = homeworldObj.name;
+
+	let stringFilms = filmTitles.join(', ');
+
+	let string = `Hi my name is ${personName} and I am from ${homeworld}. I starred in the following film: ${stringFilms}`
+
+	await fs.writeFile('star-wars.txt', string, 'utf-8')
+
+	console.log('the file is finished being written');
+
+	let contents = await fs.readFile(`star-wars.txt`, "utf-8");
+	console.log(contents)
+}
+
+getPerson(1)
+```
 
 # OTHER ERROR EXAMPLE
 

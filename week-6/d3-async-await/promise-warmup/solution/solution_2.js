@@ -93,7 +93,7 @@ function workout(totalTime) {
 // TESTS
 
 
-// workout(500)
+workout(500)
 //    Error:  you dont have enough time to stretch
 
 

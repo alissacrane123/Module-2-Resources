@@ -1,30 +1,50 @@
-function throwError() {
-	throw Error('an error occurred')
-	handleError(error)
-}
+
+// function sum(array) {
+// 	let sum = 0;
+
+// 	for (let i = 0; i < array.length; i++) {
+// 		sum += array[i]
+// 	}
+
+// 	return sum;
+// }
 
 
-function throwError() {
+function sum(array) {
+	let sum = 0;
 	try {
-		throw Error('an error occurred')
-	} catch (error) {
-		handleError(error)
+		for (let i = 0; i < array.length; i++) {
+			sum += array[i]
+		}
+
+	} catch (e) {
+		handleError(e)
 	}
+	return sum;
 }
 
-
-function throwError() {
-	try {
-		let string = 'hello';
-		string.map( el => el);
-	} catch (error) {
-		handleError(error)
-	}
-}
 
 function handleError(error) {
 	console.log('something happened: ', error.message)
 }
 
 
-throwError();
+
+let res = sum(null)
+console.log(res)
+
+
+
+// function throwError() {
+// 	throw Error('an error occurred')
+// 	handleError(error)
+// }
+
+
+// function throwError() {
+// 	try {
+// 		throw Error('an error occurred')
+// 	} catch (error) {
+// 		handleError(error)
+// 	}
+// }

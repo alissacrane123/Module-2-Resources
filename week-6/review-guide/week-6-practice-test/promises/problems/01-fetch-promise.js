@@ -15,8 +15,8 @@ with it author  "https://zenquotes.io/api/random".
 The Documentation link for ZenQuotesAPI:
 https://zenquotes.io/
 
-2. Write a function named `gettingQuote` that will accept one parameter, which will 
-be the `url` of the API endpoint you want to request data from.  The `gettingQuote`
+2. Write a function named `gettingQuotes` that will accept one parameter, which will 
+be the `url` of the API endpoint you want to request data from.  The `gettingQuotes`
 function should fetch the url parameter, convert the response from JSON to an 
 object, and then console log the quote and author in seperate lines.  Interpolate 
 the author into the following format `- ${author}`.  YOU NEED TO ACCOMPLISH THIS 
@@ -26,12 +26,12 @@ HINT:  Test out what your response would be from the API and that will help you
 figure out how to correctly destructure the object into the output requested.
 
 In addition to Mocha, we recommend that you test your code manually using
-Node.js with the examples below. Call the `gettingQuote` function with the correct
+Node.js with the examples below. Call the `gettingQuotes` function with the correct
 areguement and then use the command:
 `node problems/01-fetch-promise.js`
 
 Examples:
-gettingQuote("https://zenquotes.io/api/random");
+gettingQuotes("https://zenquotes.io/api/random");
 
 // Should print...
 //
@@ -50,7 +50,7 @@ it should be formatted the same as above.
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 
 try {
-  module.exports = gettingQuote;
+  module.exports = gettingQuotes;
 } catch {
   module.exports = null;
 }

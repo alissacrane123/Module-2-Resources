@@ -14,7 +14,7 @@ async function fetchMovie(movie) {
 			parseMovie(json)
 		}
 	} catch (err) {
-		console.log('ERROR: ', err)
+		console.log('UH OH ERROR: ', err)
 	}
 }
 

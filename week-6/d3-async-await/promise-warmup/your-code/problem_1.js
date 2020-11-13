@@ -3,7 +3,12 @@
 
 
 function stretch() {
-	
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('done stretching');
+			resolve();
+		},1000)
+	})
 }
 
 
@@ -13,7 +18,12 @@ function stretch() {
 
 
 function runOnTreadmill() {
-
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log('done running on treadmill');
+			resolve();
+		}, 500)
+	})
 }
 
 // TODO: write a function called liftWeights that console.logs
@@ -21,7 +31,12 @@ function runOnTreadmill() {
 
 
 function liftWeights() {
-
+		return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			console.log("done lifting weights");
+			resolve();
+		}, 2000)
+	})
 }
 
 
@@ -32,7 +47,11 @@ function liftWeights() {
 
 
 function workout() {
-
+	stretch()
+		.then(() => runOnTreadmill())
+		.then(liftWeights)
+		.then(() => console.log('done working out'))
+		.catch(err => console.log(err))
 }
 
 
