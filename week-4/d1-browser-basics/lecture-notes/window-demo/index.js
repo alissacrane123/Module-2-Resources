@@ -9,11 +9,4 @@
 
 
 
-// context of func is object that contains that func
-// when script runs in browser, that obj is the window
-(function() {
-	console.log("global object: ", this);
-})();
-
-
 
