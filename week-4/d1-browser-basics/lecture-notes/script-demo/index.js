@@ -28,10 +28,10 @@ console.log(bodyId)
 
 // // SOLUTION #2
 // // this runs after dom is loaded (first)
-window.addEventListener('DOMContentLoaded', () => {
-	console.log('this script loads when the DOM is ready ')
-	console.log(document.getElementById('body').id)
-})
+// window.addEventListener('DOMContentLoaded', () => {
+// 	console.log('this script loads when the DOM is ready ')
+// 	console.log(document.getElementById('body').id)
+// })
 
 
 
