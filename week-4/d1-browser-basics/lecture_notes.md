@@ -1,8 +1,7 @@
 # VIDEO 1 - BROWSER AND BOM LECTURE
 
 Document Object Model (DOM)
-- interface that allows us to dynamically access and update the content, 
-  structure, and style of a document
+- interface that allows us to dynamically access and update the content, structure, and style of a document
 - defines:
 	- HTML elements as documents
 	- properties and methods on those objects
@@ -12,8 +11,7 @@ Document Object Model (DOM)
 
 
 Browser Object Model (BOM)
-- larger representation of everything provided by the browser including the
-  current document, location, history, frames, and any other functionality the browser may expose to JavaScript
+- larger representation of everything provided by the browser including the current document, location, history, frames, and any other functionality the browser may expose to JavaScript
 - `window.open("https://www.google.com", "Google", "width=100, height=100")`
   - opens new window set to google
 
@@ -63,6 +61,9 @@ The Browser Diagram:
 		 - Cookies can be read by the server as well as the client. 
 		 - Web storage data can be read only client-side.
 		 - more to come
+
+
+* SHOW DOM DEMO
 
 
 
@@ -130,22 +131,25 @@ Workarounds
 1. place script at bottom of page
 	 - browser sees script only after full html doc is downloaded
 	 - for long html docs, may be noticaeble delay
-2. `defer` attribute
-	 - tells browser to load script in background
-	 - doesnt block html from loading
+2. event listeners
+   - wrap JS code in event listener for "DOMContentLoaded"
+	 - code will execute when HTML has been parased (dom is loaded)
+3. `window.onload`
+	 - event fires when entire page has loaded including document, images, css files, etc.
+	 - usually overkill, just need to wait for the document to load
+4. `defer` attribute
+   - delaying script execution until the HTML parser has finished (dom loaded)
 	 - execute script when DOM is ready (before DOMContentLoaded event)
 	 - only for external scripts (with src attrib)
-	 - scripts still execute in order
-	 - "document order"
-3. `async` attributee
-	 - script is independent
-	 - doesnt block html from loading
+	 - scripts still execute in "document order" (top down)
+5. `async` attributee
+	 - script will be executed as soon as it’s ready and the dom is loaded
 	 - async scripts dont wait for eachother
 	 	 - small script will run before large even if placed after large
-		 - DOMContentLoaded may execute before or after
-	 - "load first order"
-4. can use both to cover all bases
-	 - older browsers may not support `defer` 
+	 - "load first order" so don't use if order matters (scripts dependent on each other)
+6. can use both to cover all bases
+	 - older browsers may not support `async` 
+	 - will fall back to `defer` behavior
 
 
 
