@@ -22,8 +22,18 @@ DOM VS BOM
 - BOM: larger representation of everything provided by browser, includes document
 
 
-![Browser](./lecture-demos/images/browser-diagram.png)
 
+
+
+
+
+
+
+
+
+
+
+![Browser](./lecture-demos/images/browser-diagram.png)
 
 The Browser Diagram:
 
@@ -74,11 +84,13 @@ The Browser Diagram:
 Overview
 - browsing web is series of req and res
 - request: searching for info or navigating to page
+  - file path in browser => get request for file
+	- navigating to webpagae => get request for webpage
 - response: what we expect to receive from req
 
 
 
-![Browser](./images/req-res-cycle.png)
+![Browser](./lecture-demos/images/req-res-cycle.png)
 
 
 Request / Response Cycle Diagram
