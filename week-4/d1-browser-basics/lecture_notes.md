@@ -1,22 +1,27 @@
 # VIDEO 1 - BROWSER AND BOM LECTURE
 
 Document Object Model (DOM)
-- hierarchy of nodes that represent HTML elements rendered on the page
-- the API to access the elements inside the document
+- interface that allows us to dynamically access and update the content, 
+  structure, and style of a document
+- defines:
+	- HTML elements as documents
+	- properties and methods on those objects
+	- events we can use to change our webpage
+- tldr: DOM allows us to change, add, delete HTML content
+
 
 
 Browser Object Model (BOM)
-- hierarchy of browser objects such as window, navigation, location
-- larger representation of everything provided by the browser including the 
-current document, location, history, frames, and any other functionality the 
-browser may expose to JavaScript
+- larger representation of everything provided by the browser including the
+  current document, location, history, frames, and any other functionality the browser may expose to JavaScript
+- `window.open("https://www.google.com", "Google", "width=100, height=100")`
+  - opens new window set to google
+
 
 
 DOM VS BOM
-- DOM: the API to access the elements inside the document
-- BOM: larger representation of everything provided by the browser including the 
-current document, location, history, frames, and any other functionality the 
-browser may expose to JavaScript
+- DOM: the API used to access the elements inside the document
+- BOM: larger representation of everything provided by browser, includes document
 
 
 ![Browser](./images/browser-diagram.png)
