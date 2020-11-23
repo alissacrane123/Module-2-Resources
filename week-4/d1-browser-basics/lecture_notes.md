@@ -22,7 +22,7 @@ DOM VS BOM
 - BOM: larger representation of everything provided by browser, includes document
 
 
-![Browser](./images/browser-diagram.png)
+![Browser](./lecture-demos/images/browser-diagram.png)
 
 
 The Browser Diagram:
