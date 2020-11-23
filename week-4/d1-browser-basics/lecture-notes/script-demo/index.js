@@ -8,11 +8,18 @@ console.log(bodyId)
 
 
 
+// // SOLUTION #2
+// // this runs after dom is loaded (first)
+// window.addEventListener('DOMContentLoaded', () => {
+// 	console.log('this script loads when the DOM is ready ')
+// 	console.log(document.getElementById('body').id)
+// })
 
 
 
 
-// // SOLUTION #1
+
+// // SOLUTION #3
 // // handler func invoked after page is loaded (second)
 // window.onload = () => {
 // 	console.log('this script loads when all resources and the DOM are ready')
@@ -26,12 +33,6 @@ console.log(bodyId)
 
 
 
-// // SOLUTION #2
-// // this runs after dom is loaded (first)
-// window.addEventListener('DOMContentLoaded', () => {
-// 	console.log('this script loads when the DOM is ready ')
-// 	console.log(document.getElementById('body').id)
-// })
 
 
 

@@ -127,7 +127,7 @@ Script placement issues
 	 - users cant see page content till script runs
 
 
-Workarounds
+SOLUTIONS 
 1. place script at bottom of page
 	 - browser sees script only after full html doc is downloaded
 	 - for long html docs, may be noticaeble delay
