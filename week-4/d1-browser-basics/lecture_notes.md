@@ -63,7 +63,7 @@ The Browser Diagram:
 		 - more to come
 
 
-* SHOW DOM DEMO
+
 
 
 
