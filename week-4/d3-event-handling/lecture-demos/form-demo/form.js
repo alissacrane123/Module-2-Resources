@@ -7,16 +7,33 @@ window.addEventListener("DOMContentLoaded", event => {
 // to '#00808042'
 // - when an input loses focus, unset the backgroundColor
 
+let inputs = document.querySelectorAll('.form__field')
 
+inputs.forEach(input => {
+	input.addEventListener('focus', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = '#00808042'
+	})
 
-
+	input.addEventListener('blur', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = 'unset'
+	})
+})
 
 
 
 
 	// FORM VALIDATION DEMO 
 
+	const form = document.getElementById('signup-form');
+	const password = document.getElementById('password');
+	const passwordConfirm = document.getElementById('confirm-password');
+	const email = document.getElementById('email');
+	const name = document.getElementById('name');
+	const body = document.getElementById('body');
 
+	let errors = [];
 	
 	const checkPassword = event => {
 		if (password.value !== passwordConfirm.value) {
@@ -45,6 +62,28 @@ window.addEventListener("DOMContentLoaded", event => {
 			}
 		};
 	}
+
+	form.addEventListener('submit', event => {
+		event.preventDefault();
+		let errorsContainer = document.getElementById('errors');
+		errors = [];
+		errorsContainer.innerHTML = '';
+
+		checkPassword();
+		checkEmail();
+		checkInputs();
+
+		if (errors.length === 0) {
+			body.innerHTML = '<h2>Your form was successfully submitted, woohoo</h2>'
+		} else {
+
+			errors.forEach(error => {
+				let li = document.createElement('li');
+				li.innerText = error;
+				errorsContainer.appendChild(li);
+			})
+		}
+	})
 
 
 });
