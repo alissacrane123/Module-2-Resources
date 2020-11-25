@@ -11,11 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
 	// TODO #2: 
 	// - uppercase the text for each LABEL element on the page
-
 
 
 
@@ -24,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// - grab the element with the id of "dog-img-container"
 	// - replace the inner H2 element with an IMG element that has a class
 	//   of "dog-img" and a src property set to "./dog.png"
-
 
 
 
