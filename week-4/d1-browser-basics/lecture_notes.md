@@ -1,3 +1,5 @@
+
+
 # VIDEO 1 - BROWSER AND BOM LECTURE
 
 Document Object Model (DOM)

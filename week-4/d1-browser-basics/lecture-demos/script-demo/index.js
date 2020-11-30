@@ -1,3 +1,10 @@
+
+// (function() {
+// 	console.log(this)
+// })()
+
+
+
 // the problem with script in header
 // script loads before rest of page is loaded
 // the body element doesnt exist yet
@@ -10,7 +17,7 @@ console.log(bodyId)
 
 // // SOLUTION #2
 // // this runs after dom is loaded (first)
-// window.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 // 	console.log('this script loads when the DOM is ready ')
 // 	console.log(document.getElementById('body').id)
 // })
