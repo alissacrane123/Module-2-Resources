@@ -23,7 +23,7 @@
 //     - receives a book as an argument
 //     - calls the `receiveBook` method on their account property, passing the
 //       book as an argument
-//     - console.logs `${this.name} received a new book, ${book}`
+//     - console.logs `${this.name} received a new book, "${book}"`
 
 
 
