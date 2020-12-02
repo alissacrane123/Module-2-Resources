@@ -1,3 +1,44 @@
+
+# VIDEO 1 - INTRO TO OBJECT ORIENTED PROGRAMMING
+
+What is OOP
+- approach for breaking down large, complex products into siimple solutions
+- smaller parts can be implemented and tested separately
+- results in higher confidence in overall solution
+- makes it easier to pinpoint issues with code
+
+
+The Big Picture
+- group data and related actions / behaviors together
+- treat as single entity within a larger system
+
+
+Encapsulation
+- the practice of bundling related properties and behaviors into
+  one class
+- each class has a purpose and is responsible for keeping track of 
+  properties related to that purpose and providing the methods 
+  necessary to manage those properties
+
+
+
+Inheritance
+- mechanism that passes traits of a parent class to its descendants
+- prevents duplication of code
+
+
+
+Polymorphism
+- provides a way to perform a single action in different forms by
+  calling the same method on different objects
+
+
+Abstraction
+- implemented to hide unnecessary data and withdraw relevant data
+
+
+
+
 # VIDEO 2 - INHERITANCE (lecture-demos/inheritance.js)
 
 
