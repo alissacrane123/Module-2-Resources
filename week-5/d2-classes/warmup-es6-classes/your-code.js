@@ -30,6 +30,7 @@
 
 
 
+
 // 3. Create a 'Library' Class
 // - PROPS: 
 //   - books (array of book titles passed in as a parameter)
@@ -55,7 +56,6 @@
 //     - if the library has the book and the user has an account:
 //       - call the user's rentBook method, passing the book as an argument
 //       - call the library's removeBook method passing in the book as an arg
-
 
 
 

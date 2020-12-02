@@ -1,7 +1,3 @@
-// const readline = require('readline');
-// console.log(readline)
-
-
 
 class Animal {
 	constructor(name, age) {
@@ -51,7 +47,7 @@ class Dog extends Animal {
 
 
 
-// OBJECT DESTRUCTURNIG EXAMPLE 
+// OBJECT DESTRUCTURING EXAMPLE 
 
 let object = { name: 'alissa', age: 25, salary: 25 };
 
@@ -63,8 +59,26 @@ let { name, age } = object;
 // let name = object.name;
 // let age = object.age;
 
-console.log(name);
-console.log(age);
+console.log(name); // alissa
+console.log(age); // 25
+
+
+
+// let newObj = { name: name, age: age}
+let newObj = { name, age };
+console.log(newObj); // { name: 'alissa', age: 25 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // console.log(Object.keys(object)) // [ 'name', 'age', 'salary' ]

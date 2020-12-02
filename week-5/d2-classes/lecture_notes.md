@@ -42,22 +42,24 @@ Abstraction
 # VIDEO 2 - INHERITANCE (lecture-demos/inheritance.js)
 
 
+Inheritance
+- base a class (child class) upon another class (parent class)
+- child class will have access to properties and methods defined within parent
+- use `extends` keyword to extend Child class from Parent class
+- typically applied to classes
+
+
+
 
 * TODO : CREATE ANIMAL PARENT CLASS FOR DOGS AND CATS
 	- dogs and cats both have a name and age property
 	- dogs and cats both have a speak method
 
 
-![classes](./images/class_def.jpg)
 
 
 
 
-
-Inheritance
-- base a class (child class) upon another class (parent class)
-- child class will have access to properties and methods defined within parent
-- use `extends` keyword to extend Child class from Parent class
 
 
 

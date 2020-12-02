@@ -10,15 +10,19 @@ class Animal {
 	}
 }
 
+
 class Banana {
 
 }
 
 
-// console.log(module.exports);
+
+// console.log(module);
 
 // EXPORT METHOD #1
-// module.exports = Animal;
+module.exports = Animal;
+
+// console.log(module.exports)
 
 
 
@@ -27,12 +31,15 @@ class Banana {
 // module.exports.Animal = Animal;
 // module.exports.Banana = Banana;
 
-// OR
-module.exports = {
-	Animal,
-	Banana
-}
+// console.log(module.exports);
 
+// OR
+// module.exports = {
+// 	Animal,
+// 	Banana
+// }
+
+// OR
 // module.exports = {
 // 	Animal: Animal,
 // 	Banana: Banana

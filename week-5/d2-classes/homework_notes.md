@@ -114,7 +114,7 @@ Classes vs Objects
 	- similar to how function definition defines a function
 	- blueprint for how function behaves
 	- dooesnt do anything until that function is invoked
-- `object instannce`: the use of that object
+- `object instance`: the use of that object
 
 
 

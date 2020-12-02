@@ -1,4 +1,16 @@
 
+class Account {
+	constructor(userName) {
+		this.userName = userName;
+		this.books = [];
+	}
+
+	receiveBook(book) {
+		this.books.push(book);
+	}
+}
+
+
 class User {
 	constructor(name) {
 		this.name = name;
@@ -17,16 +29,6 @@ class User {
 }
 
 
-class Account {
-	constructor(userName) {
-		this.userName = userName;
-		this.books = [];
-	}
-
-	receiveBook(book) {
-		this.books.push(book);
-	}
-}
 
 
 class Library {
@@ -44,8 +46,8 @@ class Library {
 	}
 
 	removeBook(book) {
-		this.books = this.books.filter(book => {
-			return book !== book;
+		this.books = this.books.filter(bookTitle => {
+			return book !== bookTitle;
 		});
 	}
 
@@ -71,3 +73,5 @@ library.loanBook(user, 'to kill a mockingbird') // alissa received a new book, "
 library.loanBook(user, 'harry potter'); // alissa received a new book, "harry potter"
 library.loanBook(user, 'the kite runner'); // sorry we dont have the book "the kite runner"
 library.signupUser(user); // alissa already has an account
+
+console.log(library)
