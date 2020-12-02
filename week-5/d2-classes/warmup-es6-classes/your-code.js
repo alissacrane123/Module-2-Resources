@@ -1,8 +1,8 @@
 // 1. Create an 'Account` Class
-// - props: 
+// - PROPS: 
 //   - userName (passed in as parameter)
 //   - books (initially set to an empty array)
-// - methods:
+// - METHODS:
 //   - receiveBook(book):
 //     - adds `book` to `books` array
 
@@ -11,10 +11,10 @@
 
 
 // 2. Create a 'User' Class
-// - props: 
+// - PROPS: 
 //   - name (passed in as parameter)
 //   - account (initially set to null)
-// - methods:
+// - METHODS:
 //   - signup(newAccount):
 //     - receives an instance of Account class as an argument
 //     - assigns `account` property to `newAccount` object
@@ -31,25 +31,25 @@
 
 
 // 3. Create a 'Library' Class
-// - props: 
+// - PROPS: 
 //   - books (array of book titles passed in as a parameter)
-// - methods:
+// - METHODS:
 //   - signupUser(user):
 //     - receives an instance of User class as an argument
 //     - if the user already has an account: 
 //       - console.log `${user.name} already has an account`
 //     - if the user doesnt have an account yet:
-//     	 - create a new instance of the Application class, passing in the 
+//     	 - create a new instance of the Account class, passing in the 
 //         user's name as a parameter
 //       - call the user's signup method passing the newly created instance
-//         of the Application class as an argument
+//         of the Account class as an argument
 //   - removeBook(book):
 //     - receives a book title as an argument
 //     - removes the book title from the library's books array property
 //   - loanBook(user, book)
 //     - receives an instance of user class and a book title as arguments
 //     - if the library doesnt have that book: 
-//       - console.log `sorry we dont have the book "${bookTitle}"`
+//       - console.log `sorry we dont have the book "${book}"`
 //     - if the user doesnt have an account yet: 
 //       - console.log `sorry, ${user.name} does not have an account`
 //     - if the library has the book and the user has an account:
