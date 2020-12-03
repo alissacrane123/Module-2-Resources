@@ -116,16 +116,6 @@ describe("Problem 4:", () => {
         expect(dragons).to.deep.include(solution.smaug.name);
       });
 
-      // it("logs the returned array of dragon names to the console", () => {
-      //   sinon.stub(console, "log");
-
-      //   console.log(dragons));
-
-      //   expect(console.log.calledOnce).to.be.true;
-      //   expect(console.log.calledWith(["Falkor", "Smaug"])).to.be.true;
-
-      //   console.log.restore();
-      // });
     });
   });
 });

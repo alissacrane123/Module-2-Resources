@@ -34,8 +34,6 @@ describe("Problem 2:", () => {
       expect(FriendlyDragon).to.not.deep.equal({});
     });
 
-    // const filePath = path.resolve(__dirname, problemModulePath);
-    // const fileContainsClassResult = fileContainsClass(filePath, "FriendlyDragon");
 
     it("should be a class", () => {
       expect(fileContainsFriendlyDragonClassResult).to.be.true;
