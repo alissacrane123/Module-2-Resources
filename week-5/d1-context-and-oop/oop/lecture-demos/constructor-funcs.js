@@ -55,11 +55,14 @@
 // function Dog(name) {
 // 	// let this = Object.create(Dog.prototype);
 // 	this.name = name;
+
+
 // 	// return this
 // }
 
 
-// console.log(Dog.prototype); // Dog {}
+// // console.log(Dog.prototype); // Dog {}
+
 
 
 // Dog.prototype.speak = function() {
@@ -73,6 +76,11 @@
 // // invoking with 'new' gives instance access to Dog.prototype and thus,
 // // all methods defined on that prototype
 // let bodhi = new Dog("bodhi");
+
+// let lucy = new Dog('lucy')
+
+// console.log(bodhi, lucy);
+// bodhi.speak(); // hi my name is bodhi
 
 
 // // instance of Dog will only show properties defined in constructor but
@@ -98,6 +106,20 @@
 
 
 
+// MONKEY PATCHING
+// Array.prototype.removeSecondElement = function() {
+// 	let newArray = []
+// 	this.forEach((el, i) =>  {
+// 		if (i !== 1)  {
+// 			newArray.push(el)
+// 		}
+// 	});
+// 	return newArray;
+// }
+
+// let array = [1,2,3,4,5];
+// let newArr = array.removeSecondElement();
+// console.log(newArr)
 
 
 
@@ -124,10 +146,6 @@
 // myCat.changeName('bob'); // my name is bob
 
 // console.log(myCat) // Cat { name: 'bob' }
-
-
-
-
 
 
 
@@ -165,6 +183,9 @@
 // CHECK OBJECT TYPE USING INSTANCEOF
 
 // console.log(bodhi instanceof Dog) // true
+
+
+
 
 
 

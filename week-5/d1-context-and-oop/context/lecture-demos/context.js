@@ -1,13 +1,14 @@
 // SCOPE : visibility and availability of variables
 
 
-let count = 0;
 
 function increment() {
+	let count = 0;
 	count++;
 	console.log(count);
-	
 }
+
+// console.log(count)
 
 // increment();
 
@@ -83,6 +84,7 @@ let myFunc = myObj.whatIsThis;
 // let dog = {
 // 	name: 'bodhi',
 // 	speak: function() {
+// 		console.log(this)
 // 		console.log(`hi my name is ${this.name}`);
 // 	},
 // 	changeName: function(newName) {
@@ -113,7 +115,7 @@ let myFunc = myObj.whatIsThis;
 // 		console.log(`hi my name is ${this.name}`);
 // 	},
 // 	changeName: function(newName) {
-// 		// console.log(this)
+// 		console.log(this)
 // 		this.name = newName;
 // 		this.speak();
 // 	}

@@ -50,6 +50,7 @@ STEP 1: Identify Potential classes
 3. `Shelter` object: keeps track of aggregate info and interactions
 4. `Adoption` object: keeps track of user/shelter/dog interactions
 
+
 STEP 2: Specify Propreties and Methods for each class
 1. `Dog`
 	 - properties: `name`, `age`, `breed`
@@ -58,7 +59,7 @@ STEP 2: Specify Propreties and Methods for each class
 	 - properties: `name`, `age`, `pets`
 	 - methods: `adoptPet`
 3. `Shelter`
-	 - properties: `adoptedAnimals`, `currentAnimals`
+	 - properties: `adoptions`, `currentAnimals`
 	 - methods: `createAdoption`, `receiveAnimal`
 4. `Adoption`
 	 - properties: `user`, `animal`
@@ -68,7 +69,7 @@ STEP 2: Specify Propreties and Methods for each class
 STEP 3 - Define Relationships
 - `pets` property of `User` class contains instances of `Dog`
 - `currentAnimals` property of `Shelter` class contains instances of `Dog`
-- `adoptedAnimals` property of `Shelter` class contains instances of `Adoption`
+- `adoptions` property of `Shelter` class contains instances of `Adoption`
 - `user` property of `Class Adoption` contains an instance of `User`
 - `animal` property of `Class Adoption` contains instance of `Dog`
 

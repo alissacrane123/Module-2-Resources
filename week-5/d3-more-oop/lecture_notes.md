@@ -1,6 +1,4 @@
-tell them that you know you might be overloading them with 
-additional resources but remind them that these notes are totally optional
-you dont have to look at them
+
 
 * REVIEW `SWITCH` FROM ANIMAL-FARM DEMO
 

@@ -57,6 +57,7 @@ let cow = {
 		console.log('moo moo moo')
 	},
 	speakFunc: function() {
+		// value of `this` is cow object
 		return () => {
 			console.log(`hi my name is ${this.name}`);
 			this.moo();
@@ -75,8 +76,12 @@ let cow = {
 // we can use fat arrow functions to set a specific context
 // - the context within the fat arrow func will be the same as the context
 //   where it is defined, regardless of how it is invoked
-// let fatArrowSpeak = cow.speakFunc();
+let fatArrowSpeak = cow.speakFunc();
 // fatArrowSpeak()
+
+// let noSpeak = cow.speakFunc;
+// let noArrowSpeak = noSpeak();
+// noArrowSpeak();
 
 
 // if we use a regular function, we will lose its context when we invoke
@@ -86,7 +91,7 @@ let cow = {
 
 
 // we can solve this issue by binding
-// let boundSpeak = cow.noSpeakFunc().bind(cow);
+let boundSpeak = cow.noSpeakFunc().bind(cow);
 // boundSpeak();
 
 
