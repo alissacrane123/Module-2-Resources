@@ -9,11 +9,11 @@ class Animal {
   }
 }
 
-class Dog extends Animal {
-  speak() {
-    console.log(`woof woof my name is ${this.name}`);
-  }
-}
+// class Dog extends Animal {
+//   speak() {
+//     console.log(`woof woof my name is ${this.name}`);
+//   }
+// }
 
 class Cat extends Animal {
   speak() {
@@ -21,31 +21,10 @@ class Cat extends Animal {
   }
 }
 
-
-module.exports = {
-	Dog,
-	Cat
-}
-
-// module.exports = {
-// 	Dog: Dog,
-// 	Cat: Cat
-// }
-
-// module.exports.Dog = Dog;
-// module.exports.Cat = Cat;
+module.exports = { Animal, Cat }
 
 
 
 
 
 
-
-
-// module.exports = {
-// 	Cat: Cat,
-// 	Dog: Dog
-// }
-
-// module.exports.Cat = Cat;
-// module.exports.Dog = Dog;

@@ -1,11 +1,17 @@
-// Dog, Cat, Shelter, User
-const { Dog, Cat } = require('./animal.js');
-const Shelter = require('./shelter.js')
 const { User } = require('./user')
+// const User = require('./user');
 
-// const result = require('./animal');
-// const Dog = result.Dog;
-// const Cat = result.Cat;
+// User, Cat, Shelter, Dog;
+
+const Dog = require('./dog');
+const { Cat } = require('./animal');
+
+// const exportObject = require('./animal'); // { Animal, Cat }
+// const Cat = exportObject.Cat;
+
+
+
+const Shelter = require('./shelter');
 
 let bodhi = new Dog("bodhi", 5);
 let pancake = new Cat("pancake", 9);

@@ -20,8 +20,15 @@ class Animal {
 class Horse extends Animal {
   constructor(name){
     super(name, 'neigh', 'gallops');
-  }
+	}
+	
+	makeMove() {
+		super.makeMove(); // `${this.name} ${this.move}.`)
+		console.log('hello')
+	}
 }
+
+let horse = new Horse('horsey')
 
 class Pig extends Animal {
   constructor(name) {
@@ -38,8 +45,16 @@ class Dog extends Animal {
 
 
 module.exports = {
-  Horse,
-  Dog, 
-  Pig, 
+  Horse:Horse,
+  Dog:Dog, 
+  Pig:Pig, 
 };
+
+
+
+// module.exports = {
+//   Horse,
+//   Dog, 
+//   Pig 
+// };
 

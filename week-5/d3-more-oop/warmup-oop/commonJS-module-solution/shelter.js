@@ -1,4 +1,3 @@
-const Application = require('./application')
 
 class Shelter {
   constructor() {

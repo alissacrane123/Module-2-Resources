@@ -11,8 +11,14 @@ class User {
 		// - the User class doesnt care about how the Address class
 		//   updates the address, it only cares that the address gets 
 		//   updated 
-    this.profile.updateAddress(newAddress);
-  }
+		this.profile.updateProfileAddress(newAddress);
+		// document.getElementById(id).appendChild()
+	}
+	
+	getZipCode() {
+		// this.profile.adddress.zipcodewoo
+		this.profile.getAddressZip()
+	}
 }
 
 class Profile {
@@ -21,8 +27,12 @@ class Profile {
     this.imageUrl = imageUrl;
   }
 
-  updateAddress(newAddress) {
+  updateProfileAddress(newAddress) {
     this.address.update(newAddress);
+	}
+
+	getAddressZip() {
+		return this.address.zipcode
 	}
 }
 
