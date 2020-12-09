@@ -6,7 +6,7 @@ import Dog from './dog.js';
 class Shelter {
 	constructor(dogs=[]) {
 		this.dogs = dogs;
-
+		// this.receiveDog = this.receiveDog.bind(this)
 		// invoke this method as soon as shelter instance is created
 		this.registerListeners();
 	}
@@ -15,7 +15,9 @@ class Shelter {
 		// grab the form with the id of "dog-form"
 		let form = document.getElementById('dog-form');
 		// invoke the receiveDog method when the form is submitted
-		form.addEventListener('submit', event => this.receiveDog(event))
+		form.addEventListener('submit', event => this.receiveDog(event));
+		// form.addEventListener('submit', this.receiveDog.bind(this));
+
 	}
 
 	receiveDog(event) {

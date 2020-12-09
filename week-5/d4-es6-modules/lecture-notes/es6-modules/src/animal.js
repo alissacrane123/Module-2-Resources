@@ -26,4 +26,5 @@ export class Cat extends Animal {
   }
 }
 
+// module.exports = { Cat, Dog }
 

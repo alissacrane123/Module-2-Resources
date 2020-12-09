@@ -1,6 +1,10 @@
+import { Dog, Cat } from './animal.js';
+
+// const { Dog, Cat } = require('./animal')
 
 class Shelter {
 	constructor(animals = []) {
+		new Cat('bob')
 		this.animals = animals;
 	}
 
@@ -11,3 +15,5 @@ class Shelter {
 
 
 export default Shelter;
+
+// module.exports = Shelter

@@ -4,6 +4,11 @@
 
 Overview
 - http is critical part of world wide web
+- when you surf the web, your browser sends HTTP request messages 
+  for HTML page, images, scripts, stylesheets
+- web servers are responsible for handling these requests by returning
+  response messages that contain the requested resources
+
 
 
 Hypertext (HT)
@@ -11,8 +16,9 @@ Hypertext (HT)
 - text, images, video, any digital content
 - what makes the web the "web"
 - html : hypertext markup language
-- hyperlinks (links) : erferences betweeen hypertext resources
+- hyperlinks (links) : references betweeen hypertext resources
 - ability to link HT is what makes interactivity possible
+
 
 
 Transfer Protocall (TP)
@@ -21,11 +27,13 @@ Transfer Protocall (TP)
 - much more on this to come...
 
 
+
+
 HTTP
 - defines process of exchanging hypertext between systems
 - works betweeen clients aand servers
 	- client: data consumer, usually web browser
-	- server: data provider, often where aapp is running
+	- server: data provider, often where app is running
 - typical HTTP exchange: request/response cycle
 	- client sends request to server for particular resource(webpage, img, data)
 	- server sends back a response containing reseource or explanation of why it failed
@@ -43,7 +51,7 @@ Properties of HTTP
 3. intermediaries
 	 - other servers or devices that pass your request along
 	 - proxies: may modify req so it appears to come from different source
-	 - gateways: preetend to be the resource server you requested
+	 - gateways: pretend to be the resource server you requested
 	 - tunnels: simply pass req along
 	 - when response is sent back, "their router" acts as proxy, "your router" acts as a gateway
 	 * single server may act as any of the intermediary types, depending on need of HTTP message its transmitting
@@ -64,7 +72,7 @@ Overview
 Structure of HTTP request
 ```
 
-GET / HTTP/1.1
+GET /profile HTTP/1.1
 Host: appacademy.io
 Connection: keep-alive
 Upgrade-Insecure-Requests: 1
@@ -95,9 +103,10 @@ HTTP Verbs
    - destroys resources on the server
 
 
+
 HTTP Request Structure
 1. Request-line and http verbs
-2. Header
+2. Headers
 3. Body
 
 
@@ -109,8 +118,10 @@ Request-line & HTTP Verbs
   ex: `GET / HTTP/1.1`
 
 
+
 Headers
 - key/value pairs that come after request line
+- control how request is processed by the server
 - appear on separate lines and define metadata needed to process request
 - common request headers:
   * `Host`: root path for our URI, domain we'd like to request resources from (`Host: appacademy.io`)
@@ -153,6 +164,8 @@ Status Line
   * 200-299: successful
   * 300-399: redirection (there has been a change)
   * 400-499: client error (issue with request)
+	  - 404: not found
+		- 403: forbidden
   * 500-599: server error ("its not you its me")
 
 

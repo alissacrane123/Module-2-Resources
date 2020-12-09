@@ -2,14 +2,18 @@
   "name": "demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "built-in-packages.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "mocha": "^8.2.0"
-  }
+  "license": "ISC"
 }
