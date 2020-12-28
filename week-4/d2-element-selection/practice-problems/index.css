@@ -1,0 +1,12 @@
+div {
+	display:flex;
+	align-items: center;
+}
+
+h3 {
+	margin-left: 10px;
+}
+
+h2 {
+	margin-bottom: -10px;
+}
