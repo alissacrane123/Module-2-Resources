@@ -22,6 +22,7 @@ DOM API
 		 - returns HTMLCollection (live)
 
 
+
 NodeList vs HTML Collection
 - collections of nodes
 - NodeList:
@@ -31,7 +32,6 @@ NodeList vs HTML Collection
 - HTMLCollection:
 	* two methods: `item` && `namedItem`
 	* cannot call forEach
-
 
 
 
