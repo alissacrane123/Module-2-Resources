@@ -86,8 +86,8 @@ The Browser Diagram:
 Overview
 - browsing web is series of req and res
 - request: searching for info or navigating to page
-  - file path in browser => get request for file
-	- navigating to webpagae => get request for webpage
+  - file path in browser => GET request for file
+	- navigating to webpage => GET request for webpage
 - response: what we expect to receive from req
 
 
