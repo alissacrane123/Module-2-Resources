@@ -15,7 +15,7 @@ Below you will find an outline of the material we will be covering over the next
 
 ## Week 5 - Object Oriented Programming
 
-### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Day 1: Context and NPM](https://github.com/alissacrane123/Module-2-Resources/tree/main/week-5/d1-context-and-oop)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Day 1: Context and OOP](https://github.com/alissacrane123/Module-2-Resources/tree/main/week-5/d1-context-and-oop)
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Day 2: ES6 Classes](https://github.com/alissacrane123/Module-2-Resources/tree/main/week-5/d2-classes)
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Day 3: More OOP](https://github.com/alissacrane123/Module-2-Resources/tree/main/week-5/d3-more-oop)
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Day 4: ES6 Modules](https://github.com/alissacrane123/Module-2-Resources/tree/main/week-5/d4-es6-modules)
