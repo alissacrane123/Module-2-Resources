@@ -9,6 +9,7 @@ const Elephant = require("../problems/elephant.js");
 describe("Elephant", function() {
   let dumbo;
 
+	// this code will be run once before each test case
   beforeEach("set up an elephant instance", function() {
     dumbo = new Elephant("Dumbo");
   });

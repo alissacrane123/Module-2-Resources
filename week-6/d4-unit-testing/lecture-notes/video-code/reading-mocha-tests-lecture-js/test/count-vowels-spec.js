@@ -23,7 +23,19 @@ describe("countVowels()", function() {
       const answer2 = 6;
 
       assert.deepStrictEqual(result1, answer1);
-      assert.deepStrictEqual(result2, answer2);
+			assert.deepStrictEqual(result2, answer2);
+			
+
+
+			// deepStrictEqual vs strictEqual 
+
+			// let arr = [1,2,3];
+			// let arr2 = [1,2,3];
+			// let arr3 = arr;
+
+			// assert.deepStrictEqual(arr, arr2);
+			// assert.strictEqual(arr, arr2);
+			// assert.strictEqual(arr, arr3)
     });
   });
 

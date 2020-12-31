@@ -39,12 +39,13 @@ describe("Employee", function() {
     it('should set the "name" and "salary" properties when a new employee is created', () => {
 			let expected = "Jake"
 
+
       expect(jake.name).to.eql(expected);
       expect(jake.salary).to.eql(10);
     });
 
     it('should default the value of the "atWork" property to false', () => {
-      expect(jake.atWork).to.be.false;
+			expect(jake.atWork).to.be.false;
     });
   });
 
@@ -94,7 +95,7 @@ describe("Employee", function() {
   describe("prototype.getPromotion()", function() {
     context("when the employee is at work", function() {
       it("the employee will get a bonus and return that bonus", () => {
-        jake.commute();
+        jake.commute(); // set atWork property to be true
         jake.getPromotion();
         expect(jake.salary).to.eql(30);
       });
@@ -102,9 +103,12 @@ describe("Employee", function() {
 
     context("when the employee is not at work", function() {
       it("if should throw an error", () => {
+				expect(() => jake.getPromotion()).to.throw(Error);
 
-        expect(() => jake.getPromotion()).to.throw(Error);
-        // expect(jake.getPromotion).to.throw(Error);
+		
+				
+				// let promoFunc = jake.getPromotion.bind(jake);
+        // expect(promoFunc).to.throw(Error);
       });
     });
   });

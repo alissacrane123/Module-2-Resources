@@ -12,5 +12,4 @@ document.addEventListener('DOMContentLoaded', event => {
 		input.value = '';
 	});
 
-	
 })
