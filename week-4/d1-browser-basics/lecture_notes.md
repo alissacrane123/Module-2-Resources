@@ -26,7 +26,11 @@ DOM VS BOM
 
 
 
-
+Accessing Elements using the DOM
+- we use the DOM to select elements on the page using HTML and CSS selectors
+  - tagName: the element's tag name, i.e `h1` or `body`
+	- class: attribute given to html elements as a way to group them together
+	- id: unique attribute given to an element
 
 
 

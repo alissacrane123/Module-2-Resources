@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", event => {
 
 	// console.log(event)
 
-	// console.log the id of the specific div that i click on
+	// TODO = console.log the id of the specific div that i click on
 
 	// let divs = document.querySelectorAll('div');
 

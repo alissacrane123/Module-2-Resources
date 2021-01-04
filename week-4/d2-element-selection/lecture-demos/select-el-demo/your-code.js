@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
 
-// window.onload = () => {
-
-// }
 	// 1. getElementById returns an element
 	let header = document.getElementById('my-header');
 	// console.log(header);
@@ -33,23 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// TODO = ITERATE THROUGH NODE LIST AND CONSOLE.LOG EACH ITEM
 
-	numberItems.forEach(item => {
-		console.log(item);
-	})
 
-	for (let i = 0; i < numberItems.length; i++) {
-		let item = numberItems[i];
-		console.log(item)
-	}
 
 	// TODO = ITERATE THROUGH HTML COLLECTION AND CONSOLE.LOG EACH ITEM
 
-	// colorItems.forEach(item => {
-	// 	console.log(item)
-	// })
-
-	for (let i = 0; i < colorItems.length; i++) {
-		let item = colorItems[i];
-		console.log(item)
-	}
+	
+	
 })

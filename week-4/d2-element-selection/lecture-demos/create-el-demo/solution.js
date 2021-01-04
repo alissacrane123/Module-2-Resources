@@ -14,12 +14,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 	// method #2
-	let h1 = document.createElement('h1');
-	h1.innerText = 'Hello World';
-	header.appendChild(h1)
+	// let h1 = document.createElement('h1');
+	// h1.innerText = 'Hello World';
+	// header.appendChild(h1)
 
 
-
+	// method #3
+	// let h1 = document.createElement('h1');
+	// let text = document.createTextNode('Hello World');
+	// h1.appendChild(text);
+	// header.appendChild(h1);
 
 
 

@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		label.innerText = label.innerText.toUpperCase();
 	})
 
+	// method #2 - htmlcollection
+	// const labels = document.getElementsByTagName('label');
+	// for (let i = 0; i < labels.length; i++) {
+	// 	let label = labels[i];
+	// 	let text = label.innerText.toUpperCase(); // COLOR LIST
+	// 	label.innerText = text;
+	// 	// label.innerText = label.innerText.toUpperCase();
+	// }
+
 
 
 
