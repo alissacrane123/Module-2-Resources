@@ -3,9 +3,10 @@
 # VIDEO 1 - BROWSER AND BOM LECTURE
 
 Document Object Model (DOM)
-- interface that allows us to dynamically access and update the content, structure, and style of a document
+- interface that allows us to dynamically access and update the content, structure, and style of a website
+- JavaScript is the client-side scripting language that connects to the DOM in an internet browser
 - defines:
-	- HTML elements as documents
+	- HTML elements as objects
 	- properties and methods on those objects
 	- events we can use to change our webpage
 - tldr: DOM allows us to change, add, delete HTML content
@@ -123,7 +124,7 @@ The role of the browser
 
 Window Object
 - represents an open window in a browser
-- thee global object in the browser
+- the global object in the browser
 - the root of the DOM
 	- contains document property used to reference DOM 
 
@@ -156,12 +157,14 @@ SOLUTIONS
 	 - execute script when DOM is ready (before DOMContentLoaded event)
 	 - only for external scripts (with src attrib)
 	 - scripts still execute in "document order" (top down)
-5. `async` attributee
-	 - script will be executed as soon as it’s ready and the dom is loaded
+5. `async` attribute
+	 - script will be executed as soon as it’s ready
+	 - blocks the DOM from loading
+	 - use if script isn't dependent on DOM loading and want scripts to execute as soon as they have loaded
 	 - async scripts dont wait for eachother
 	 	 - small script will run before large even if placed after large
 	 - "load first order" so don't use if order matters (scripts dependent on each other)
-6. can use both to cover all bases
+6. can use both 
 	 - older browsers may not support `async` 
 	 - will fall back to `defer` behavior
 
@@ -172,7 +175,7 @@ SOLUTIONS
 
 
 Cookies
-- small piecese of info websites store on your computer
+- small pieces of info websites store on your computer
 - stored and managed by web browser
 - included with http requests
 	- server sends data to browser, sent back on next req
