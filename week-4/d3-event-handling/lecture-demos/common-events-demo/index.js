@@ -2,23 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 1. update click count via span
 	
-	// let button = document.getElementById("my-button");
-	// let span = document.getElementById("my-span");
-
-  // button.addEventListener("click", (event) => {
-  //   span.innerHTML = `${event.detail}`;
-  // });
-	
-	let button = document.getElementById('my-button');
-	let span = document.getElementById('my-span');
-
-	let count = 0;
-	button.addEventListener('click', event => {
-		count++;
-		span.innerText = count;
-	})
-
-
 
 
 
@@ -28,21 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // append the image "dog-pic.jpg" to the div with the id of "dog-img"
   // when the user clicks the button with the id of "show-dog-button"
 
-  const showDogButton = document.getElementById('show-dog-button')
-	const dogDiv = document.getElementById('dog-img');
-
-
-	showDogButton.addEventListener('click', event => {
-		let img = document.createElement('img');
-		img.src = './dog-pic.jpg';
-
-		if (dogDiv.innerHTML === '') {
-			dogDiv.appendChild(img);
-		} else {
-			dogDiv.innerHTML = '';
-		}
-
-	})
 
 
 
@@ -54,21 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	// matches a color in the valid color's array, change the background
 	// color of the div with id "my-div" to that color
   
-	let validColors = ['red', 'blue', 'green', 'purple'];
-
-	const userInput = document.getElementById('user-input');
-	const colorDiv = document.getElementById('my-div');
-
-	userInput.addEventListener('input', event => {
-		let val = event.target.value;
-
-		if (validColors.includes(val)) {
-			colorDiv.style.backgroundColor = val;
-		}
-	})
-
-
-
 
 
 
@@ -83,32 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// 4. pizza demo using classes
 
-  let options = document.getElementById("options");
-
-  options.addEventListener("click", (event) => {
-
-    if (event.target.type === "checkbox") {
-			let checkbox = event.target;
-			// event.target.id = 'mushroom'
-      let toppings = document.getElementsByClassName(event.target.id);
-			
-      if (checkbox.checked) {
-				let array = Array.from(toppings);
-        array.forEach((item) => {
-          item.classList.remove("invisible");
-				});
-				
-				// for (let i = 0; i < toppings.length; i++) {
-				// 	let item = toppings[i];
-				// 	item.classList.remove('invisible')
-				// }
-      } else {
-        Array.from(toppings).forEach((item) => {
-          item.classList.add("invisible");
-        });
-      }
-    }
-  });
 
 
 

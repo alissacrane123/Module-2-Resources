@@ -7,19 +7,9 @@ window.addEventListener("DOMContentLoaded", event => {
 // to '#00808042'
 // - when an input loses focus, unset the backgroundColor
 
-let inputs = document.querySelectorAll('.form__field')
 
-inputs.forEach(input => {
-	input.addEventListener('focus', event => {
-		let curInput = event.target;
-		curInput.style.backgroundColor = '#00808042'
-	})
 
-	input.addEventListener('blur', event => {
-		let curInput = event.target;
-		curInput.style.backgroundColor = 'unset'
-	})
-})
+
 
 
 
@@ -63,27 +53,7 @@ inputs.forEach(input => {
 		};
 	}
 
-	form.addEventListener('submit', event => {
-		event.preventDefault();
-		let errorsContainer = document.getElementById('errors');
-		errors = [];
-		errorsContainer.innerHTML = '';
 
-		checkPassword();
-		checkEmail();
-		checkInputs();
-
-		if (errors.length === 0) {
-			body.innerHTML = '<h2>Your form was successfully submitted, woohoo</h2>'
-		} else {
-
-			errors.forEach(error => {
-				let li = document.createElement('li');
-				li.innerText = error;
-				errorsContainer.appendChild(li);
-			})
-		}
-	})
 
 
 });

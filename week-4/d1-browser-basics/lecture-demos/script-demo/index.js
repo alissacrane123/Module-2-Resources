@@ -8,7 +8,7 @@
 // the problem with script in header
 // script loads before rest of page is loaded
 // the body element doesnt exist yet
-let bodyId = window.document.getElementById('body').id // body
+let bodyId = window.document.getElementById('my-body').id // my-body
 console.log(bodyId)
 
 
@@ -18,9 +18,11 @@ console.log(bodyId)
 // // SOLUTION #2
 // // this runs after dom is loaded (first)
 // document.addEventListener('DOMContentLoaded', () => {
-// 	console.log('this script loads when the DOM is ready ')
-// 	console.log(document.getElementById('body').id)
-// })
+
+// 	console.log('this script loads when the DOM is ready ');
+// 	console.log(document.getElementById('my-body').id);
+
+// });
 
 
 

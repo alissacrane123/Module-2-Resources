@@ -37,6 +37,14 @@ Note:
 
 
 ```js
+	let divs = document.querySelectorAll('div');
+
+	divs.forEach(div => {
+		div.addEventListener('click', () => {
+			console.log(div.id)
+		})
+	})
+
 	let list = document.getElementById('grid');
 
 	list.addEventListener('click', (event) => {
@@ -54,7 +62,14 @@ Note:
 		console.log('event.currentTarget : ', event.currentTarget);
 
 
-	})
+	});
+
+
+
+	// removing elements 
+	// let div2 = document.getElementById('grid__item-2')
+	// grid.removeChild(div2)
+	// div2.remove()
 ```
 
 
@@ -135,27 +150,50 @@ Common Events Overview
   let userInput = document.getElementById("user-input");
   let myDiv = document.getElementById("my-div");
 
-  let validColors = [
-    "red",
-    "green",
-    "blue",
-    "yellow",
-    "orange",
-    "pink",
-    "purple",
-  ];
 
   userInput.addEventListener("input", (event) => {
     let value = event.target.value;
 
-    if (validColors.includes(value)) {
+    // if (validColors.includes(value)) {
       myDiv.style.backgroundColor = value;
-    }
+    // }
   });
 
 ```
 
 4. pizza demo
+
+```js
+	// 4. pizza demo using classes
+
+  let options = document.getElementById("options");
+
+  options.addEventListener("click", (event) => {
+
+    if (event.target.type === "checkbox") {
+			let checkbox = event.target;
+			// event.target.id = 'mushroom'
+      let toppings = document.getElementsByClassName(event.target.id);
+			
+      if (checkbox.checked) {
+				let array = Array.from(toppings);
+        array.forEach((item) => {
+          item.classList.remove("invisible");
+				});
+				
+				// for (let i = 0; i < toppings.length; i++) {
+				// 	let item = toppings[i];
+				// 	item.classList.remove('invisible')
+				// }
+      } else {
+        Array.from(toppings).forEach((item) => {
+          item.classList.add("invisible");
+        });
+      }
+    }
+  });
+
+```
 
 
 5. go over difference between addEventListener and onclick
@@ -207,6 +245,27 @@ Events Overview
 
 * TODO: SHOW THEM FOCUS / BLUR INPUT EVENTS
 
+```js
+
+// BLUR/FOCUS DEMO
+// - when an input receives focus, change backgroundColor 
+// to '#00808042'
+// - when an input loses focus, unset the backgroundColor
+
+let inputs = document.querySelectorAll('.form__field')
+
+inputs.forEach(input => {
+	input.addEventListener('focus', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = '#00808042'
+	})
+
+	input.addEventListener('blur', event => {
+		let curInput = event.target;
+		curInput.style.backgroundColor = 'unset'
+	})
+})
+```
 
 the "submit" event
 - forms have special behavior 
@@ -232,7 +291,33 @@ Default Actions
 
 
 
+```js
 
+	// FORM VALIDATION DEMO 
+
+	form.addEventListener('submit', event => {
+		event.preventDefault();
+		let errorsContainer = document.getElementById('errors');
+		errors = [];
+		errorsContainer.innerHTML = '';
+
+		checkPassword();
+		checkEmail();
+		checkInputs();
+
+		if (errors.length === 0) {
+			body.innerHTML = '<h2>Your form was successfully submitted, woohoo</h2>'
+		} else {
+
+			errors.forEach(error => {
+				let li = document.createElement('li');
+				li.innerText = error;
+				errorsContainer.appendChild(li);
+			})
+		}
+	});
+	
+```
 
 
 # VIDEO 4 - BUBBLING PRINCIPLE
