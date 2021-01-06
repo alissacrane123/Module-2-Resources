@@ -9,24 +9,37 @@ document.addEventListener('DOMContentLoaded', () => {
 	// - repeat the process for the LI elements with id "red-item" and "purple-item",
 	//   setting their respective DIV's backgroundColors to red and purple
 
-	let blueItem = document.getElementById('blue-item');
-	let blueDiv = document.createElement('div');
-	blueDiv.setAttribute('class', 'square');
-	blueDiv.style.backgroundColor = 'blue';
-	blueItem.appendChild(blueDiv);
+	// let blueItem = document.getElementById('blue-item');
+	// let blueDiv = document.createElement('div');
+	// blueDiv.setAttribute('class', 'square');
+	// blueDiv.style.backgroundColor = 'blue';
+	// blueItem.appendChild(blueDiv);
 
-	let redItem = document.getElementById('red-item');
-	let redDiv = document.createElement('div');
-	redDiv.setAttribute('class', 'square');
-	redDiv.style.backgroundColor = 'red';
-	redItem.appendChild(redDiv);
+	// let redItem = document.getElementById('red-item');
+	// let redDiv = document.createElement('div');
+	// redDiv.setAttribute('class', 'square');
+	// redDiv.style.backgroundColor = 'red';
+	// redItem.appendChild(redDiv);
 
-	let purpleItem = document.getElementById('purple-item');
-	let purpleDiv = document.createElement('div');
-	purpleDiv.setAttribute('class', 'square');
-	purpleDiv.style.backgroundColor = 'purple';
-	purpleItem.appendChild(purpleDiv);
+	// let purpleItem = document.getElementById('purple-item');
+	// let purpleDiv = document.createElement('div');
+	// purpleDiv.setAttribute('class', 'square');
+	// purpleDiv.style.backgroundColor = 'purple';
+	// purpleItem.appendChild(purpleDiv);
 
+	// method #2 - with function
+
+	function createDiv(parentId, color) {
+		let parent = document.getElementById(parentId);
+		let div = document.createElement('div');
+		div.setAttribute('class', 'square');
+		div.style.backgroundColor = color;
+		parent.appendChild(div);
+	}
+
+	createDiv('blue-item', 'blue');
+	createDiv('red-item', 'red');
+	createDiv('purple-item', 'purple')
 
 
 
