@@ -256,13 +256,11 @@ let inputs = document.querySelectorAll('.form__field')
 
 inputs.forEach(input => {
 	input.addEventListener('focus', event => {
-		let curInput = event.target;
-		curInput.style.backgroundColor = '#00808042'
+		input.style.backgroundColor = '#00808042'
 	})
 
 	input.addEventListener('blur', event => {
-		let curInput = event.target;
-		curInput.style.backgroundColor = 'unset'
+		input.style.backgroundColor = 'unset'
 	})
 })
 ```

@@ -5,17 +5,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	let innerDiv = document.getElementById('inner');
 
 
-	// innerDiv.addEventListener('click', (event) => {
-	// 	console.log('inner div event triggered')
-	// })
+	innerDiv.addEventListener('click', (event) => {
+		event.stopPropagation();
+		console.log('inner div event triggered')
+	})
 
-	// middleDiv.addEventListener('click', (event) => {
-	// 	console.log('middle div event triggered')
-	// })
+	middleDiv.addEventListener('click', (event) => {
+		// event.stopPropagation();
+		console.log('middle div event triggered')
+	})
 
-	// outerDiv.addEventListener('click', (event) => {
-	// 	console.log('outer div event triggered')
-	// })
+	outerDiv.addEventListener('click', (event) => {
+		console.log('outer div event triggered');
+	})
+
+
+
+
+
+
+
 
 
 
@@ -27,24 +36,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	// stopping propogation
 
 
-	innerDiv.addEventListener('click', (event) => {
-		// event.stopPropagation();
-		console.log('inner div event triggered')
-	})
-
-
-	middleDiv.addEventListener('click', event => {
-		event.stopPropagation();
-		// event.stopImmediatePropagation();
-		console.log('first middle div event triggered');
-	})
-
-	// middleDiv.addEventListener('click', event => {
-	// 	console.log('second middle div event triggered');
+	// innerDiv.addEventListener('click', (event) => {
+	// 	// event.stopPropagation();
+	// 	console.log('inner div event triggered')
 	// })
 
-	outerDiv.addEventListener('click', (event) => {
-		// event.stopPropagation();
-		console.log('outer div event triggered')
-	})
+
+	// middleDiv.addEventListener('click', event => {
+	// 	event.stopPropagation();
+	// 	// event.stopImmediatePropagation();
+	// 	console.log('first middle div event triggered');
+	// })
+
+	// // middleDiv.addEventListener('click', event => {
+	// // 	console.log('second middle div event triggered');
+	// // })
+
+	// outerDiv.addEventListener('click', (event) => {
+	// 	// event.stopPropagation();
+	// 	console.log('outer div event triggered')
+	// })
 })

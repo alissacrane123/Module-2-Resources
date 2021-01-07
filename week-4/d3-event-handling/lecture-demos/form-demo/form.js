@@ -7,7 +7,18 @@ window.addEventListener("DOMContentLoaded", event => {
 // to '#00808042'
 // - when an input loses focus, unset the backgroundColor
 
+let inputs = document.querySelectorAll('.form__field');
 
+inputs.forEach(input => {
+	input.addEventListener('focus', event => {
+		// let myInput = event.target;
+		input.style.backgroundColor = '#00808042';
+	});
+
+	input.addEventListener('blur', event => {
+		input.style.backgroundColor = 'unset'
+	})
+})
 
 
 
@@ -25,7 +36,7 @@ window.addEventListener("DOMContentLoaded", event => {
 
 	let errors = [];
 	
-	const checkPassword = event => {
+	const checkPassword = (event) => {
 		if (password.value !== passwordConfirm.value) {
 			errors.push('Passwords must match')
 		} 
@@ -52,6 +63,30 @@ window.addEventListener("DOMContentLoaded", event => {
 			}
 		};
 	}
+
+	form.addEventListener('submit', event => {
+		event.preventDefault();
+
+		errors = [];
+
+		checkPassword();
+		checkEmail();
+		checkInputs();
+
+		let errorsContainer = document.getElementById('errors');
+		errorsContainer.innerHTML = '';
+
+		if (errors.length > 0) {
+			errors.forEach(err => {
+				let li = document.createElement('li');
+				li.innerText = err;
+				errorsContainer.appendChild(li);
+			})
+		} else {
+			// body.innerHTML = '<h2>your form was submitted</h2>'
+			body.innerText = 'your form was submitted'
+		}
+	})
 
 
 
