@@ -50,30 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 2. if values exist in local storage, pre populate relevant inputs
 	// with those values
 
-	const firstName = document.getElementById('first');
-	const lastName = document.getElementById('last');
-	const email = document.getElementById('email');
-
-
-	const firstNameValue = localStorage.getItem('first');
-	const lastNameValue = localStorage.getItem('last');
-	const emailValue = localStorage.getItem('email');
-
-	firstName.value = firstNameValue;
-	lastName.value = lastNameValue;
-	email.value = emailValue;
-
-
-	const form = document.getElementById('my-form');
-
-	form.addEventListener('submit', event => {
-		event.preventDefault();
-
-		localStorage.setItem('first', firstName.value);
-		localStorage.setItem('last', lastName.value);
-		localStorage.setItem('email', email.value);
-	})
-
+	
 
 	
 })
