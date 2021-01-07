@@ -1,8 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	// 1. update click count via span
+	// 1. update total click count via span
 	
+	let button = document.getElementById("my-button");
+	let span = document.getElementById('my-span');
 
+	let count = 0;
+
+	button.addEventListener('click', event => {
+		count++;
+		span.innerText = count;
+	})
 
 
 
@@ -11,9 +19,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // append the image "dog-pic.jpg" to the div with the id of "dog-img"
   // when the user clicks the button with the id of "show-dog-button"
 
+	const showDogButton = document.getElementById('show-dog-button');
+	const dogDiv = document.getElementById('dog-img');
+
+	showDogButton.addEventListener('click', event => {
+		let img = document.createElement('img');
+		img.src = "dog-pic.jpg";
 
 
+		// img.id = 'some-id';
+		// img.className = ''
+		// img.setAttribute('src', 'dog-pic.jpg');
 
+		if (dogDiv.innerHTML === '') {
+			dogDiv.appendChild(img);
+		}
+	})
 
 
 	// 3. handling user input
@@ -23,7 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
 	// color of the div with id "my-div" to that color
   
 
+	let validColors = ['red', 'blue', 'green'];
 
+	let input = document.getElementById('user-input');
+	let colorDiv = document.getElementById('my-div');
+
+	input.addEventListener('input', event => {
+		// console.log(event.target.value);
+
+		let value = event.target.value;
+
+		if (validColors.includes(value)) {
+			colorDiv.style.backgroundColor = value;
+		}
+	});
 
 
 
@@ -51,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // using onclick
   // stored as attribute on element
   // will reassign previous values
-  // otherButton.onclick = () => console.log('we will never see this!')
-  // otherButton.onclick = () => console.log('we will only see this')
+  // otherButton.onclick = () => console.log('we will never see this!');
+  // otherButton.onclick = () => console.log('we will only see this');
 
   // using event listener
   // can register multiple listeners on the same element
