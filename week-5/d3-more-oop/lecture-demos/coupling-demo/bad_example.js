@@ -10,7 +10,7 @@ class User {
 		// 1. we've chained two dots (excluding the dot after `this`)
 		// 2. the User class must be aware of the inner workings
 		//    of the Address class in order to update an address
-		this.profile.address.update(address)
+		this.profile.address.update(address);
 		// let newAddress = this.profile.address;
 		// newAddress.update(address)
 	}

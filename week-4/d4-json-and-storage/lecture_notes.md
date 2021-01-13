@@ -10,13 +10,13 @@ Web Storage API
 When to use Web Storage API?
 - can store more data than cookies
 - ideal for storing multiple key-value pairs
-- data can only be saved as a string
+- data can only be saved as a string (json)
 - with web storage, data stored on users machine
 	- only accessible client side
 - cookies can be read both server and client side
 
 
-JSON Overview
+JSON (JavaScript Object Notation) Overview
 - JSON is just a string
 - looks a lot like JS syntax 
 - invented by avid JS developer (Douglas Crockford)

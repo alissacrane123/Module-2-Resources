@@ -1,8 +1,8 @@
 /* two functions, `move` and `makeNoise` */
 
-const move = function(name, animalType) {
+const move = function(name, animalType) { 
   let verb;
-  switch (animalType) {
+  switch (animalType) { // 'horse'
     case 'horse':
       verb = 'gallops';
       break;
@@ -17,9 +17,11 @@ const move = function(name, animalType) {
   console.log(`${name} ${verb}.`);
 };
 
+move('Bob', 'horse');  
+
 const makeNoise = function (name, animalType) {
   let noise;
-  switch (animalType) {
+  switch (animalType) { // animalType === 'dog'
     case 'horse':
       noise = 'neigh';
       break;
