@@ -10,10 +10,9 @@ class User {
 
 		this.pets.forEach(pet => {
 			let petType = pet.constructor.name;
-			console.log(`a ${petType} named ${pet.name}`)
+			console.log(`\ta ${petType} named ${pet.name}`)
 		})
 	}
-
 
 	adoptPet(animalName, shelter) {
 		let pet = shelter.createAdoption(animalName, this);
