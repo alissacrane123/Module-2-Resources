@@ -72,9 +72,12 @@ everywhere! BURN!!!! //  Drogon destroys Night King with fire! WHOOOSH!!!
 
 
 *************** YOUR CODE BELOW ***************************************/
-
+//We need to require the Dragon parent class from the previous problem
 const Dragon = require("./problem-01-make-dragons");
 
+// Remember this class needs to inherit from the Dragon parent class, so we need
+// to use extends for the class declaration, and super for any attributes
+// (parameters) we want to inherit for the parent as well
 class EvilDragon extends Dragon {
   constructor(name, color, evilDoings, nemesis) {
     super(name, color);
@@ -91,7 +94,8 @@ class EvilDragon extends Dragon {
     return `${this.name} destroys ${this.nemesis} with fire! WHOOOSH!!!`;
   }
 }
-
+// You need to export the FriendlyDragon class so we can use it in other
+// modules
 module.exports = EvilDragon;
 
 /****************************************************************/

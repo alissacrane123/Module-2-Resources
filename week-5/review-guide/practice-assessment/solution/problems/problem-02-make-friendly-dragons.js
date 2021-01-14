@@ -24,7 +24,7 @@ TESTS WILL THROW A 'TypeError` AND NOT RUN ***
     FriendlyDragon's life goals (stored in an array) as a separate console.log
     for each life goal in the format `${name} likes to ${lifeGoal}` b. A second
     method named `helpsPeople` that will return a string using the `name` and
-    `friend` property values formatted as `${name} helps his friend ${friend}`.
+    `friend` property values formatted as `${name} helps their friend ${friend}`.
 
 In addition to Mocha, we recommend that you test your code manually using
 Node.js with the examples below. Use the command:
@@ -48,7 +48,7 @@ small children"
 //  }
 //  Puff breathes fire everywhere! BURN!!!! //  Puff likes to live by the sea //
 Puff likes to frolick in the autumn mist //  Puff likes to help small children
-//  Puff helps his friend Jackie Paper
+//  Puff helps their friend Jackie Paper
 
 const toothless = new FriendlyDragon("Toothless", "black", ["save the town of
     Burke", "fly with a kid on his back", "hang out with vikings"], "Hiccup");
@@ -66,14 +66,17 @@ back", //      "hang out with vikings"
 //  }
 //  Toothless likes to save the town of Burke //  Toothless likes to fly with a
 kid on his back //  Toothless likes to hang out with vikings //  Toothless helps
-his friend Hiccup //  Toothless breathes fire everywhere! BURN!!!!
+their friend Hiccup //  Toothless breathes fire everywhere! BURN!!!!
 
 
 
 *************** YOUR CODE BELOW ***************************************/
-
+//We need to require the Dragon parent class from the previous problem
 const Dragon = require("./problem-01-make-dragons");
 
+// Remember this class needs to inherit from the Dragon parent class, so we need
+// to use extends for the class declaration, and super for any attributes
+// (parameters) we want to inherit for the parent as well
 class FriendlyDragon extends Dragon {
   constructor(name, color, lifeGoals, friend) {
     super(name, color);
@@ -88,10 +91,11 @@ class FriendlyDragon extends Dragon {
   }
 
   helpsPeople() {
-    return `${this.name} helps his friend ${this.friend}`;
+    return `${this.name} helps their friend ${this.friend}`;
   }
 }
-
+// You need to export the FriendlyDragon class so we can use it in other
+// modules
 module.exports = FriendlyDragon;
 
 /****************************************************************/

@@ -2,16 +2,16 @@
 
 Let's make some Friendly and Evil Dragons! 🐲 🐉 🐲
 
-1. Require the Friendly Dragon class from the
+1. Require the FriendlyDragon class from the
    `./problem-02-make-friendly-dragons.js` module.
 
-2. Require the Evil Dragon class from the `./problem-03-make-evil-dragons.js`
+2. Require the EvilDragon class from the `./problem-03-make-evil-dragons.js`
    module.
 
 3. Create 2 new instances, 1 of the Friendly Dragon Class and the other of the
    Evil Dragon Class with the following details: a. A Friendly Dragon named
    "Falkor" with the color "white", the life goals of "save Atreyu from the
-   swamp", "save Atryu from the Nothing", and "scare the local bullies into a
+   swamp", "save Atreyu from the Nothing", and "scare the local bullies into a
    dumpster" and has the friend "Bastian". Assign this new instance to the
    variable `falkor` b. An Evil Dragon named "Smaug" with the color "black", the
    evilDoings of "take over your mountain kingdom", "steal all your dwarven
@@ -40,9 +40,9 @@ console.log(falkor.helpsPeople())
 //    ],
 //    friend: 'Bastian'
 //  }
-//  Falkor likes to save Atreyu from the swamp //  Falkor likes to save Atryu
+//  Falkor likes to save Atreyu from the swamp //  Falkor likes to save Atreyu
 from the Nothing //  Falkor likes to scare the local bullies into a dumpster //
-Falkor breathes fire everywhere! BURN!!!! //  Falkor helps his friend Bastian
+Falkor breathes fire everywhere! BURN!!!! //  Falkor helps their friend Bastian
 
 console.log(smaug); smaug.dontInviteThemOverForDinner();
 console.log(smaug.breathesFire()); console.log(smaug.burnsNemesis());
@@ -66,7 +66,11 @@ The static method from step 4, when called and logged to the console...
 //  [ 'Falkor', 'Smaug' ]
 
 *************** YOUR CODE BELOW ***************************************/
-
+// We need to require all the other files so we will have access to them.  For
+// calling the static method, we do not have to require the Dragon class, we
+// could just use the FriendlyDragon or EvilDragon class, as they will inherit
+// that method from their parent as well, or we can require Dragon and call it
+// on that
 const FriendlyDragon = require("./problem-02-make-friendly-dragons");
 const EvilDragon = require("./problem-03-make-evil-dragons");
 const Dragon = require("./problem-01-make-dragons");
@@ -92,13 +96,16 @@ const smaug = new EvilDragon(
   ],
   "Dwarf King"
 );
-
+// We can also call the getDragons method on FriendlyDragon or EvilDragon if we
+// chose because they both inherit that mehtod from their parent class Dragon.
+// Remember at static method must be called on the class, NOT an instance of the
+// class
 const allDragons = Dragon.getDragons(falkor, smaug);
 
 
+/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = { falkor, smaug, allDragons };
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 } catch {
   module.exports = null;
 }

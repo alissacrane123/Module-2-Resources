@@ -34,7 +34,8 @@ console.log(puff.breathesFire());
 // }
 // "Puff breathes fire everywhere! BURN!!!!"
 
-const toothless = new Dragon("Toothless", "black"); console.log(puff);
+const toothless = new Dragon("Toothless", "black"); 
+console.log(toothless);
 console.log(toothless.breathesFire());
 
 // Should print...
@@ -59,6 +60,13 @@ class Dragon {
     return `${this.name} breathes fire everywhere! BURN!!!!`;
   }
 
+  // Here we create a static method on the Dragon class that will accept any
+  // number of instances of that class as parameters, using the rest parameter,
+  // which will accept any number of parameters passed to the function and store
+  // them in an array.  We can then map through that aray and return an new
+  // array of just the names of each instaced passed into the method.  (Remember
+  // when you call this methond you have to call it on the class, not an
+  // instance of the class)
   static getDragons(...dragons) {
     return dragons.map((dragon) => dragon.name);
   }

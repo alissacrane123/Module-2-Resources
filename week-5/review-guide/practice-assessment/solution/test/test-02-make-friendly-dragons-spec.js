@@ -39,7 +39,6 @@ describe("Problem 2:", () => {
       expect(fileContainsFriendlyDragonClassResult).to.be.true;
     });
 
-    console.log(fileContainsFriendlyDragonClassResult);
     if (FriendlyDragon !== null && fileContainsFriendlyDragonClassResult) {
       context("should include a constructor method that initializes", () => {
         const instance = new FriendlyDragon(
@@ -141,7 +140,7 @@ describe("Problem 2:", () => {
           "Jackie Paper"
         );
         expect(instance.helpsPeople()).to.equal(
-          `${instance.name} helps his friend ${instance.friend}`
+          `${instance.name} helps their friend ${instance.friend}`
         );
       });
     });

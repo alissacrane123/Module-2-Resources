@@ -25,7 +25,8 @@ problems/01-make-dragons.js`
 
 Examples:
 
-const puff = new Dragon("Puff", "green"); console.log(puff);
+const puff = new Dragon("Puff", "green"); 
+console.log(puff);
 console.log(puff.breathesFire());
 
 // Should print...
@@ -34,7 +35,8 @@ console.log(puff.breathesFire());
 // }
 // "Puff breathes fire everywhere! BURN!!!!"
 
-const toothless = new Dragon("Toothless", "black"); console.log(puff);
+const toothless = new Dragon("Toothless", "black"); 
+console.log(toothless);
 console.log(toothless.breathesFire());
 
 // Should print...

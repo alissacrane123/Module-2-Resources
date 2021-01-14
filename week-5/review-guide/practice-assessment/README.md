@@ -10,8 +10,8 @@ file, Mocha specs are provided to test your work.
 
 To get started, use the following commands:
 
-1. `cd` into the starter directory
-2. `npm install` to install any dependencies
+1. `npm install` to install any dependencies
+2.  `cd` into the `starter` directory
 3. `mocha` to run the test cases
 
 If you want to run the tests for one problem file at a time, you can do so 
