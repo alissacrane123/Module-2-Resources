@@ -1,4 +1,4 @@
-export class Game {
+export default class Game {
   constructor() {
     this.gameStartMessage = "Hello! Do you want to play a game?";
   }
@@ -12,3 +12,12 @@ export class Game {
     });
   }
 }
+
+export function hello() {
+
+}
+
+// commonJS
+// module.exports = { Game }
+
+// module.exports = Game;

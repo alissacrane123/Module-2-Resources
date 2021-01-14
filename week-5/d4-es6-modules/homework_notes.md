@@ -1,13 +1,17 @@
 
 # ES6 MODULES
 
+Allow us to directly reference or include one JS file in another
+when working in the browser
+- prevents us from having to use multiple html scripts
 
 
 Browser Support for ES6 Modules
 - ES6 modules can only be used when file is specified as a `module`
+- running local web server gives you access to browser support for ES6 syntax
 - can use HTTP server to serve HTML file with <script type="module">
 	- `python3 -m http.server`
-- running local web server gives you access to browser support for ES6 syntax
+- can alternatively open `index.html` using live server
 
 
 Modules in Browser Before ES6 Support
