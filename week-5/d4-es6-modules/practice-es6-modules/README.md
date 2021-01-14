@@ -40,8 +40,7 @@ This project is intended to be used with a simple server
 
 
 3. `index.js`
-   - after the DOM has loaded:
-	   - should create a new instance of the `Dog` class with a name of "Bodhi",
-		   an age of 5 and an image source of "./images/bodhi.jpg"
-   	 - should create a new instance of the `Shelter` class, passing in the
-			 dog instance you just created
+		- should create a new instance of the `Dog` class with a name of "Bodhi",
+			an age of 5 and an image source of "./images/bodhi.jpg"
+		- should create a new instance of the `Shelter` class, passing in the
+			dog instance you just created
