@@ -26,16 +26,16 @@ This project is intended to be used with a simple server
 2. Create a `Shelter` class in the `shelter.js` file
    - props: `dogs` (array, set to empty array if no value passed in)
 	 - methods:
-	   - `receiveDog()`
-		   - should grab the values from each input in the `form` element and
-			   use those values to instantiate a new instance of the `Dog` class
-			 - should add newly created dog object to `dogs` array
-			 - should clear each input value
 	   - `registerListeners()`
 		   - should be called as soon as shelter is instantiated
 			 - should add an event listener to the `form` element with
 			   an id of "dog-form" that calls the `receiveDog` method
-				 when the form is submitted
+				 when the form is submitted, passing along the event object
+	   - `receiveDog(event)`
+		   - should grab the values from each input in the `form` element and
+			   use those values to instantiate a new instance of the `Dog` class
+			 - should add newly created dog object to `dogs` array
+			 - should clear each input value
 
 
 
