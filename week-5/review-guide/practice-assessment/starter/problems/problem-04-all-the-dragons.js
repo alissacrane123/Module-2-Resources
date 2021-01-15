@@ -70,9 +70,11 @@ The static method from step 4, when called and logged to the console...
 
 
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
+
 try {
   module.exports = { falkor, smaug };
 } catch {
   module.exports = null;
 }
+
+/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
