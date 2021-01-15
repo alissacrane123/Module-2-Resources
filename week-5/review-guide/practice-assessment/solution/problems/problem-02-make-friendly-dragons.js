@@ -51,7 +51,7 @@ Puff likes to frolick in the autumn mist //  Puff likes to help small children
 //  Puff helps their friend Jackie Paper
 
 const toothless = new FriendlyDragon("Toothless", "black", ["save the town of
-    Burke", "fly with a kid on his back", "hang out with vikings"], "Hiccup");
+    Burke", "fly with a kid on their back", "hang out with vikings"], "Hiccup");
     console.log(toothless); toothless.hasLifeGoals();
     console.log(toothless.helpsPeople()); console.log(toothless.breathesFire());
     //Friendly dragons can still breathe fire!
@@ -59,13 +59,13 @@ const toothless = new FriendlyDragon("Toothless", "black", ["save the town of
 // Should print...
 
 //  FriendlyDragon {//    name: "Toothless", //    color: "black", //
-lifeGoals: [//      "save the town of Burke", //      "fly with a kid on his
+lifeGoals: [//      "save the town of Burke", //      "fly with a kid on their
 back", //      "hang out with vikings"
 //    ],
 //    friend: "Hiccup"
 //  }
 //  Toothless likes to save the town of Burke //  Toothless likes to fly with a
-kid on his back //  Toothless likes to hang out with vikings //  Toothless helps
+kid on their back //  Toothless likes to hang out with vikings //  Toothless helps
 their friend Hiccup //  Toothless breathes fire everywhere! BURN!!!!
 
 
