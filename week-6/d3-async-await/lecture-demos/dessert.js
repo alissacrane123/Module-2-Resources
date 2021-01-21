@@ -3,15 +3,15 @@
 // - should return a promise that resolves after one second with a value
 // of 'done preparing dough'
 
-// function prepareDough() {
-// 	console.log('start preparing dough');
+function prepareDough() {
+	console.log('start preparing dough');
 
-// 	return new Promise((resolve, reject) => {
-// 		setTimeout(() => {
-// 			resolve('done preparing dough')
-// 		}, 1000)
-// 	})
-// }
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('done preparing dough')
+		}, 1000)
+	})
+}
 
 
 // // TODO: create a function called bakeCookies
@@ -19,15 +19,15 @@
 // // - should return a promise that resolves after two seconds with a value
 // // of 'done baking cookies'
 
-// function bakeCookies() {
-// 	console.log('start baking cookies')
+function bakeCookies() {
+	console.log('start baking cookies')
 
-// 	return new Promise((resolve, reject) => {
-// 		setTimeout(() => {
-// 			resolve('done baking cookies')
-// 		}, 2000)
-// 	})
-// }
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve('done baking cookies')
+		}, 2000)
+	})
+}
 
 
 
@@ -37,36 +37,29 @@
 // - should console.log the value each promise fulfills with
 // - should console.log 'dessert is ready' when we're done baking cookies
 
-// function makeDessert() {
-// 	prepareDough()
-// 		.then(res => console.log(res))
-// 		.then(bakeCookies)
-// 		.then(res => console.log(res))
-// 		.then(() => console.log('dessert is ready!!!'))
-// 	  .catch(err => console.log('ERROR: ', err))
-// }
+function makeDessert() {
+	prepareDough()
+		.then(res => console.log(res))
+		.then(bakeCookies)
+		.then(res => console.log(res))
+		.then(() => console.log('dessert is ready!!!'))
+	  .catch(err => console.log('ERROR: ', err))
+}
 
 
 // TODO: recreate makeDessert method using async & await
 
-// async function makeDessert() {
-// 	try {
 
-// 		let res1 = await prepareDough();
-// 		console.log(res1)
-// 		let res2 = await bakeCookies();
-// 		console.log(res2);
-// 		console.log('dessert is ready!')
-// 	} catch (err) {
-// 		console.log('error: ', err)
-// 	}
-// }
+
+
+
+
 
 
 
 // makeDessert();
 
-// console.log('hello');
+
 
 // start preparing dough
 // done preparing dough
@@ -141,9 +134,7 @@ async function makeDessert() {
 	console.log("dessert is ready!!!");
 }
 
-// const makeDessert = async () => {
 
-// }
 
 makeDessert()
 	.catch(err => console.log('ERROR: ', err))
@@ -156,6 +147,12 @@ makeDessert()
 
 
 
+
+
+
+
+
+	
 // VALUE RETURNED FROM ASYNC FUNCTION IS VALUE PROMISE FULFIILLS WITH
 
 // function prepareDough() {
