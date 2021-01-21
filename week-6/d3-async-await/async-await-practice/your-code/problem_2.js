@@ -46,7 +46,7 @@ function liftWeights(timeLeft) {
 }
 
 
-// TODO: reacreate the following solution to problem #2 from this morning's
+// TODO: recreate the following solution to problem #2 from this morning's
 // promise-warmup practice using async & await 
 
 
@@ -60,6 +60,17 @@ function liftWeights(timeLeft) {
 //     .catch((err) => console.log("Error: ", err));
 // }
 
+
+async function workout(time) {
+	try {
+		time = await stretch(time);
+		time = await runOnTreadmill(time);
+		time = await liftWeights(time);
+		console.log('done working out')
+	} catch (err) {
+		console.log(err);
+	}
+}
 
 
 
@@ -75,7 +86,7 @@ function liftWeights(timeLeft) {
 //    Error:  you dont have enough time to stretch
 
 
-// workout(1000);
+workout(1000);
 // 		done stretching
 // 		Error:  you dont have enough time to run on treadmill
 

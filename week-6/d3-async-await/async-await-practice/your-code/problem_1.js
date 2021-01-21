@@ -35,7 +35,16 @@ function liftWeights() {
 // you've finished lifting weights
 
 
-
+async function workout() {
+	try {
+		await stretch();
+		await runOnTreadmill();
+		await liftWeights();
+		console.log('done working out')
+	} catch (err) {
+		console.log(err)
+	}
+}
 
 
 
