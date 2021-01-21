@@ -65,7 +65,7 @@ Properties of HTTP
 Overview
 - the web is made up of computers asking each other for things
 - you tell your browser which website you want to access
-- your browser hands that reequeset off to a server that can get what you asked for
+- your browser hands that request off to a server that can get what you asked for
 
 
 
@@ -82,6 +82,20 @@ Accept-Encoding: gzip, deflate
 Accept-Language: en-US,en;q=0.9
 
 ```
+
+
+HTTP Request Structure
+1. Request-line and http verbs
+2. Headers
+3. Body
+
+
+Request-line & HTTP Verbs
+- first line, made up of three parts
+  1. the method, indicated by an HTTP verb
+  2. the URI (uniform resources indicator) that identifies what we've requested
+  3. the HTTP version we expect to use (usually HTTP/1.1 OR HTTP/2)
+  ex: `GET / HTTP/1.1`
 
 
 
@@ -104,18 +118,6 @@ HTTP Verbs
 
 
 
-HTTP Request Structure
-1. Request-line and http verbs
-2. Headers
-3. Body
-
-
-Request-line & HTTP Verbs
-- first line, made up of three parts
-  1. the method, indicated by an HTTP verb
-  2. the URI (uniform resources indicator) that identifies what we've requested
-  3. the HTTP version we expect to use (usually HTTP/1.1 OR HTTP/2)
-  ex: `GET / HTTP/1.1`
 
 
 
@@ -205,7 +207,7 @@ letter example
 
 
 
-![req-res](./images/req-res.png)
+
 
 1. client makes a req 
 - req line contains http verb, protocal version

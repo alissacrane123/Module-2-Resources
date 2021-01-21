@@ -4,7 +4,7 @@
 
 // built into node runtime, dont need to npm install
 const http = require('http');
-const fs = require('fs')
+const fs = require('fs');
 
 // accepts function that takes request & response params
 // http server lives between req from client & res server sends
@@ -51,10 +51,10 @@ const server = http.createServer(function(request, response) {
 
 	// close the response
 	// if you dont close, browser will wait and wait, eventually timeout
-	response.end()
+	response.end();
 })
 
-const port = 8080
+const port = 8080;
 
 // tell our server to listen for requests on port 8080
 server.listen(port, () => {

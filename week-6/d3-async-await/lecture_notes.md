@@ -14,6 +14,7 @@ overview
 - avoids the need to explicitely configure promise chains
 - dont need to worry about scoping issues
 
+
 Function Declaration with `async`
 - creates a function that returns an implicit promise containing the result
 - allows us to utilize `await` keyword inside
