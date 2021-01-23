@@ -45,4 +45,3 @@ with the following command in your terminal:
 
 Please remember you will need to be in the `/testing` directory for this portion
 of the practice, and it is not at all connected to the section on Promises.
-

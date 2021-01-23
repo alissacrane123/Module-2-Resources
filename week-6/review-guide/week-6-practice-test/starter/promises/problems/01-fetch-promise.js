@@ -1,4 +1,4 @@
-/********Week 6 Practice Test - Problem 2 - Promises with async/await **********
+/********Week 6 Practice Test - Problem 1 - Promises with .then ***************
 
 🧘🏾‍♂️ Lets get some motivational quotes to help us prepare for the next
 assessment! 🧘🏼‍♀️
@@ -15,23 +15,22 @@ with it author  "https://zenquotes.io/api/random".
 The Documentation link for ZenQuotesAPI:
 https://zenquotes.io/
 
-2. Write a function named `gettingAsyncQuote` that will accept one parameter, which will 
-be the `url` of the API endpoint you want to request data from.  The `gettingAsyncQuote`
+2. Write a function named `gettingQuote` that will accept one parameter, which will 
+be the `url` of the API endpoint you want to request data from.  The `gettingQuote`
 function should fetch the url parameter, convert the response from JSON to an 
-object, and then console log the quote and author in seperate lines.  Interpolate 
-the author into the following format `- ${author}`.  YOU NEED TO ACCOMPLISH THIS 
-USING `ASYNC` AND `AWAIT` (YOU CAN NOT USE `.THEN`).    
+object, and then console log the quote and author in seperate lines. YOU NEED TO ACCOMPLISH THIS 
+USING `.THEN` PROMISE HANDLING SYNTAX (YOU CAN NOT USE ASYNC AND AWAIT).    
 
 HINT:  Test out what your response would be from the API and that will help you
 figure out how to correctly destructure the object into the output requested.
 
-In addition to Mocha, we recommend that you test your code manually using
-Node.js with the examples below. Call the `gettingAsyncQuote` function with the correct
-areguement and then use the command:
-`node problems/02-fetch-async-await.js`
+In addition to Mocha, test your code manually using
+Node.js with the examples below. Call the `gettingQuote` function with the correct
+arguement and then use the command:
+`node problems/01-fetch-promise.js`
 
 Examples:
-gettingAsyncQuote("https://zenquotes.io/api/random");
+gettingQuote("https://zenquotes.io/api/random");
 
 // Should print...
 //
@@ -43,14 +42,10 @@ it should be formatted the same as above.
 
 *************** YOUR CODE BELOW ***************************************/
 
-
-
-
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 
 try {
-  module.exports = gettingAsyncQuote;
+  module.exports = gettingQuote;
 } catch {
   module.exports = null;
 }
